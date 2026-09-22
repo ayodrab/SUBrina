@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+:root {
+  --canvas: #19092b;
+  --canvas-card: #25123d;
+  --paper: #fdf4ff;
+  --cream: #faf5ff;
+  --pink: #f43f5e;
+  --hot-pink: #ec4899;
+  --purple: #a855f7;
+  --purple-deep: #2e1065;
+  --yellow: #fde047;
+  --cyan: #38bdf8;
+  --ink: #1e0538;
+  --line-light: rgba(255, 255, 255, 0.15);
+  --line-dark: rgba(30, 5, 56, 0.18);
+  --radius: 1.2rem;
+  --display: "Arial Black", "Outfit", -apple-system, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --body: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--paper);
+  background-color: var(--canvas);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: clip;
+}
+
+/* Typography Rules */
+h1, h2, h3 {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  margin-top: 0;
+}
+
+h1 em, h2 em, h3 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+/* Section Kicker */
+.section-kicker {
+  margin: 0 0 1.5rem;
+  font: 800 0.72rem/1.2 var(--body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line-light);
+  color: var(--yellow);
+}
+
+.section-kicker.dark {
+  border-bottom-color: var(--line-dark);
+  color: var(--pink);
+}
+
+.eyebrow {
+  margin: 0 0 1.4rem;
+  font: 800 0.75rem/1.2 var(--body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "✳ ";
+  color: var(--yellow);
+}
+
+/* Playful Pop Buttons */
+.button-pop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.4rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.button-pop-primary {
+  background: var(--yellow);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.button-pop-primary:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 6px 7px 0 var(--pink);
+}
+
+.button-pop-secondary {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.button-pop-secondary:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 6px 7px 0 var(--yellow);
+}
+
+.button-pop-pink {
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.button-pop-pink:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 6px 7px 0 var(--yellow);
+}
+
+/* Playful Card Tilts & Animations */
+.tilt-left {
+  transform: rotate(-1.5deg);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease-out;
+}
+
+.tilt-right {
+  transform: rotate(1.5deg);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease-out;
+}
+
+.tilt-left:hover, .tilt-right:hover {
+  transform: rotate(0deg) translateY(-8px) scale(1.01);
+}
+
+/* Playful Sticker Badge */
+.sticker {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 49% 51% 48% 52% / 53% 48% 52% 47%;
+  font-family: var(--display);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Brewitty-Inspired Pixel Badge & Micro Elements */
+.pixel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  font-family: ui-monospace, SFMono-Regular, "Courier New", monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.pixel-badge-yellow {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.pixel-badge-pink {
+  background: var(--hot-pink);
+  color: white;
+}
+
+.pixel-badge-cyan {
+  background: var(--cyan);
+  color: var(--ink);
+}
+
+.pixel-badge-purple {
+  background: var(--purple);
+  color: white;
+}
+
+/* 3-Step Interactive Process Pill */
+.step-tab-button {
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.step-tab-button.active {
+  background: var(--yellow);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--pink);
+  transform: translate(-2px, -2px);
+}
+
+.step-tab-button.inactive {
+  background: #25123d;
+  color: rgba(253, 244, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.step-tab-button.inactive:hover {
+  background: #2e1065;
+  color: #fff;
+  border-color: var(--yellow);
+}
+
+/* Running Ticker Marquee */
+.ticker-tape {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.85rem 0;
+  animation: ticker-roll 25s linear infinite;
+  font-family: var(--display);
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes ticker-roll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--purple-deep);
+  border: 2px solid var(--canvas);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink);
+}

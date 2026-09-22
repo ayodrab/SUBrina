@@ -1,0 +1,6 @@
+{
+  "name": "SUBrina - The Teenage Soundsystem",
+  "description": "SUBrina the teenage soundsystem - A friendly community DIY soundsystem fundraiser based on Multiple Entry Horns, powering parties, kiezburn soundcamp, and cultural events.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
