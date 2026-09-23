@@ -11,11 +11,6 @@ export const TheSoundSystem: React.FC = () => {
       title: '2 × SAWMOD Tops',
       designer: 'Designed by JW Audio',
       summary: '5 speaker drivers inside each cabinet, all firing out of the exact same horn flare.',
-      points: [
-        'Multiple Entry Horn (MEH) design',
-        'Point-source acoustic wavefront',
-        'Fantastic sonic coherence & depth',
-      ],
       bg: 'bg-[#fdf4ff] text-[#1e0538]',
       tilt: 'tilt-left',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#f43f5e]',
@@ -27,11 +22,6 @@ export const TheSoundSystem: React.FC = () => {
       title: '4 × 18" Reflex Subs',
       designer: 'Designed by Horner Audio',
       summary: 'Four tuned 18-inch reflex subwoofers for huge, effortless physical bass without muddy distortion.',
-      points: [
-        'Extended sub-bass down to 30 Hz',
-        'Heavy-duty Baltic birch construction',
-        'Musical, chest-punching warmth',
-      ],
       bg: 'bg-[#fde047] text-[#1e0538]',
       tilt: 'tilt-right',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
@@ -43,11 +33,6 @@ export const TheSoundSystem: React.FC = () => {
       title: 'Amp Rack & DSP',
       designer: 'Digital Signal Processing',
       summary: 'High-headroom clean amplification with FIR filtering, dynamic safety limiters, and precision crossover.',
-      points: [
-        'Dedicated driver protection limiters',
-        'Ultra-low distortion signal path',
-        'Balanced Neutrik speakON cabling',
-      ],
       bg: 'bg-[#38bdf8] text-[#1e0538]',
       tilt: 'tilt-left',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
@@ -59,11 +44,6 @@ export const TheSoundSystem: React.FC = () => {
       title: '400 Indoors / 200 Outdoors',
       designer: 'Dancefloor Capacity',
       summary: 'Sized to fill intimate club spaces or outdoor festival fields with uncompromising presence.',
-      points: [
-        'Up to 400 people indoors',
-        '150–200 people outdoors',
-        'Also great in intimate listening rooms',
-      ],
       bg: 'bg-[#ec4899] text-white',
       tilt: 'tilt-right',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#fde047]',
@@ -75,11 +55,6 @@ export const TheSoundSystem: React.FC = () => {
       title: 'Portable & Van-Ready',
       designer: 'Smart Dimensions',
       summary: 'Prioritises a very present sound while maintaining manageable dimensions and weights for transport.',
-      points: [
-        'Fits seamlessly in a standard van',
-        'Balanced handles for two-person carry',
-        'Fast 30-minute festival setup',
-      ],
       bg: 'bg-[#fdf4ff] text-[#1e0538]',
       tilt: 'tilt-left',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#38bdf8]',
@@ -91,11 +66,6 @@ export const TheSoundSystem: React.FC = () => {
       title: 'Baltic Birch Wood',
       designer: 'CNC Precision Joinery',
       summary: '100% void-free premium Baltic birch plywood with internal bracing to eliminate unwanted box resonances.',
-      points: [
-        'Rigid multi-ply cabinet construction',
-        'Tough textured Warnex protective coating',
-        'Built to survive decades of raves',
-      ],
       bg: 'bg-[#c084fc] text-[#1e0538]',
       tilt: 'tilt-right',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
@@ -152,24 +122,9 @@ export const TheSoundSystem: React.FC = () => {
                   {c.designer}
                 </div>
 
-                <p className="text-xs sm:text-sm font-medium leading-relaxed mb-6 opacity-90">
+                <p className="text-xs sm:text-sm font-medium leading-relaxed opacity-90">
                   {c.summary}
                 </p>
-
-                {/* Bullet Points */}
-                <ul className="space-y-2 pt-4 border-t border-current/20">
-                  {c.points.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-2 text-xs font-semibold">
-                      <span className="text-sm font-black leading-none mt-0.5">✦</span>
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="pt-5 mt-6 border-t border-current/15 flex items-center justify-between text-[11px] font-bold opacity-70">
-                <span>SUBrina Rig Specification</span>
-                <span>0{idx + 1}</span>
               </div>
             </div>
           ))}
