@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DonationTier } from '../types';
-import { FUNDRAISING_MILESTONES } from '../data';
+import { FUNDRAISING_MILESTONES, PAYPAL_POOL_URL } from '../data';
 import { CheckCircle2, Clock, Sparkles, ExternalLink, Settings, RefreshCw } from 'lucide-react';
 
 interface FundraiserTrackerProps {
@@ -9,8 +9,7 @@ interface FundraiserTrackerProps {
   totalDonorsCount: number;
   anonymousCount: number;
   anonymousTotal: number;
-  tiers: DonationTier[];
-  onOpenDonate: (presetAmount?: number) => void;
+  tiers?: DonationTier[];
   onUpdateTotalManually?: (newTotal: number) => void;
 }
 
@@ -18,8 +17,6 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
   totalRaised,
   goal,
   totalDonorsCount,
-  tiers,
-  onOpenDonate,
   onUpdateTotalManually,
 }) => {
   const percent = Math.min(100, Math.round((totalRaised / goal) * 100));
@@ -54,7 +51,7 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
             </h2>
           </div>
           <p className="text-base sm:text-lg text-[#fdf4ff]/80 leading-relaxed font-normal">
-            Transparent community budget for raw Baltic birch, 5-driver horns, amplification, and Horner Audio subwoofers — pooled together via PayPal.
+            €8,500 for materials and hardware — Baltic birch plywood, 5-driver horns, amplification, and Horner Audio subwoofers pooled together via PayPal.
           </p>
         </div>
 
@@ -124,40 +121,43 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
             </div>
           </div>
 
-          {/* Clean Action Row (Removed the weird uncentered button clutter) */}
-          <div className="pt-6 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
+          {/* Action Row with Suggested Amounts & Labels */}
+          <div className="pt-6 border-t border-white/15 flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="text-center lg:text-left">
               <span className="text-xs font-black uppercase tracking-wider text-[#fde047] block">
-                Contribute through our community PayPal Pool
+                Suggested Contributions & Labels
               </span>
-              <p className="text-xs sm:text-sm text-[#fdf4ff]/80 font-medium mt-0.5">
-                Every euro goes straight to materials and sound hardware.
-              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#19092b] border border-white/15 text-xs text-[#fdf4ff]/90 font-bold">
+                  <strong className="text-[#fde047]">€15</strong> Heartfelt Thanks
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#19092b] border border-white/15 text-xs text-[#fdf4ff]/90 font-bold">
+                  <strong className="text-[#f43f5e]">€30</strong> Chest Hug of Bass
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#19092b] border border-white/15 text-xs text-[#fdf4ff]/90 font-bold">
+                  <strong className="text-[#38bdf8]">€60</strong> DJ Song Request
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#19092b] border border-white/15 text-xs text-[#fdf4ff]/90 font-bold">
+                  <strong className="text-[#ec4899]">€200</strong> Guestlist: You + 5
+                </span>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {[15, 30, 60, 200].map((amt) => (
-                <button
-                  key={amt}
-                  onClick={() => onOpenDonate(amt)}
-                  className="px-4 py-2.5 rounded-full border-2 border-[#1e0538] bg-[#fdf4ff] hover:bg-[#fde047] text-[#1e0538] text-xs font-black uppercase tracking-wider transition-all hover:-translate-y-0.5 hover:shadow-[3px_4px_0_#f43f5e] cursor-pointer"
-                >
-                  €{amt}
-                </button>
-              ))}
-
-              <button
-                onClick={() => onOpenDonate(30)}
-                className="button-pop button-pop-primary py-2.5 px-6 text-xs"
+            <div className="flex items-center gap-3 shrink-0">
+              <a
+                href={PAYPAL_POOL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-pop button-pop-primary py-3 px-7 text-xs sm:text-sm font-black inline-flex items-center justify-center"
               >
-                <span>Chip in via PayPal ↗</span>
-              </button>
+                <span>Chip in via PayPal Pool ↗</span>
+              </a>
 
               {/* Organizer Sync Tool */}
               <button
                 onClick={() => setShowAdminSync(!showAdminSync)}
                 title="Organizer Tool: Update Balance"
-                className="p-2.5 rounded-full border border-white/20 hover:border-[#fde047] text-white/60 hover:text-[#fde047] transition-colors"
+                className="p-3 rounded-full border border-white/20 hover:border-[#fde047] text-white/60 hover:text-[#fde047] transition-colors"
               >
                 <Settings className="w-4 h-4" />
               </button>
@@ -270,52 +270,6 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
               </div>
             );
           })}
-        </div>
-
-        {/* Intangible Backer Rewards */}
-        <div>
-          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-6">
-            <h3
-              className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#fdf4ff]"
-              style={{ fontFamily: 'var(--display)' }}
-            >
-              Intangible Perks & Love
-            </h3>
-            <span className="text-xs text-[#fde047] font-black uppercase tracking-wide">
-              Click any perk to pledge via PayPal
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {tiers.map((tier) => (
-              <div
-                key={tier.id}
-                onClick={() => onOpenDonate(tier.minAmount)}
-                className="p-6 rounded-[1.6rem] bg-[#fdf4ff] text-[#1e0538] border-2 border-[#1e0538] shadow-[5px_5px_0_#f43f5e] hover:shadow-[8px_8px_0_#fde047] hover:-translate-y-1 transition-all cursor-pointer flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="text-3xl mb-3">{tier.badge.split(' ')[0] || '💖'}</div>
-                  <div className="text-xs font-black uppercase tracking-wider text-[#f43f5e] mb-1">
-                    from €{tier.minAmount}
-                  </div>
-                  <h4
-                    className="text-lg font-black uppercase tracking-tight mb-2 group-hover:text-[#ec4899] transition-colors leading-tight"
-                    style={{ fontFamily: 'var(--display)' }}
-                  >
-                    {tier.name}
-                  </h4>
-                  <p className="text-xs text-[#1e0538]/85 leading-relaxed font-normal">
-                    {tier.perk}
-                  </p>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-black/10 flex items-center justify-between text-[11px] font-bold text-[#ec4899]">
-                  <span>Pledge €{tier.minAmount}</span>
-                  <span className="group-hover:translate-x-1 transition-transform">↗</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

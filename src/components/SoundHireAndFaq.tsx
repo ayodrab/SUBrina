@@ -33,7 +33,7 @@ export const SoundHireAndFaq: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-start">
           {/* FAQ Column */}
           <div>
-            <div className="section-kicker">06 / Frequently Asked Questions</div>
+            <div className="section-kicker">05 / Frequently Asked Questions</div>
             <h2
               className="text-4xl sm:text-5xl font-black uppercase tracking-[-0.05em] leading-[0.9] mb-8"
               style={{ fontFamily: 'var(--display)' }}

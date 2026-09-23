@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { Menu, X, Sparkles } from 'lucide-react';
+import { PAYPAL_POOL_URL } from '../data';
 
 interface NavbarProps {
   totalRaised: number;
   goal: number;
-  onOpenDonate: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ totalRaised, goal, onOpenDonate }) => {
+export const Navbar: React.FC<NavbarProps> = ({ totalRaised, goal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const percent = Math.min(100, Math.round((totalRaised / goal) * 100));
 
   const navLinks = [
-    { label: 'About', href: '#about' },
+    { label: 'Events', href: '#events' },
     { label: 'The Sound', href: '#system' },
     { label: 'FUNdraiser', href: '#fundraiser' },
-    { label: 'Events', href: '#events' },
     { label: 'Supporters', href: '#supporters' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Origin & FAQ', href: '#faq' },
   ];
 
   return (
@@ -67,12 +66,14 @@ export const Navbar: React.FC<NavbarProps> = ({ totalRaised, goal, onOpenDonate 
             </span>
           </div>
 
-          <button
-            onClick={onOpenDonate}
+          <a
+            href={PAYPAL_POOL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:inline-flex button-pop button-pop-primary text-xs py-2.5 px-5"
           >
             <span>Chip in via PayPal ↗</span>
-          </button>
+          </a>
 
           {/* Hamburger Menu Toggle Button */}
           <button
@@ -112,15 +113,15 @@ export const Navbar: React.FC<NavbarProps> = ({ totalRaised, goal, onOpenDonate 
             </div>
 
             <div className="pt-2 sm:hidden">
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  onOpenDonate();
-                }}
-                className="button-pop button-pop-primary w-full py-3 text-xs font-black"
+              <a
+                href={PAYPAL_POOL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="button-pop button-pop-primary w-full py-3 text-xs font-black text-center flex items-center justify-center"
               >
                 <span>Chip in via PayPal Pool ↗</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

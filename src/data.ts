@@ -1,5 +1,7 @@
 import { Donor, BudgetItem, EventItem, CrewMember, DonationTier, FundraisingMilestone } from './types';
 
+export const PAYPAL_POOL_URL = 'https://paypal.me/subrinasoundsystem';
+
 export const INITIAL_FUNDRAISING_GOAL = 8500;
 
 export const FUNDRAISING_MILESTONES: FundraisingMilestone[] = [
@@ -174,7 +176,7 @@ export const CREW_MEMBERS: CrewMember[] = [
     name: 'Ayo',
     monsterAlias: 'Acoustic Alchemist',
     role: 'DJ, Sound Tinkerer & Builder',
-    bio: 'Deeply involved in nightlife and club culture with Hardcore as a DJ and event organizer. Partnering closely with Horner Audio to build, wire, and tune our Multiple Entry Horn system for laser-sharp coherence and zero ear fatigue.',
+    bio: 'Deeply involved in nightlife and club culture with Heart Chor as a DJ and event organizer. Partnering closely with Horner Audio to build, wire, and tune our Multiple Entry Horn system for laser-sharp coherence and zero ear fatigue.',
     monsterEmoji: '⚡',
     specialty: 'Acoustics, speaker building, DSP alignment, DJ sets',
     favoriteHz: '33 Hz (Physical Sub-Bass)',

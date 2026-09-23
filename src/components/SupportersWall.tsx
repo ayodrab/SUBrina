@@ -1,18 +1,18 @@
 import React from 'react';
 import { Donor } from '../types';
 import { Heart, Sparkles } from 'lucide-react';
+import { PAYPAL_POOL_URL } from '../data';
 
 interface SupportersWallProps {
   donors: Donor[];
-  onOpenDonate: () => void;
 }
 
-export const SupportersWall: React.FC<SupportersWallProps> = ({ donors, onOpenDonate }) => {
+export const SupportersWall: React.FC<SupportersWallProps> = ({ donors }) => {
   return (
     <section id="supporters" className="py-20 sm:py-24 px-4 sm:px-6 md:px-10 bg-[#25123d] text-[#fdf4ff] border-t-2 border-[#2e1065]">
       <div className="max-w-4xl mx-auto text-center">
         {/* Compact Heading */}
-        <div className="section-kicker">05 / Community Supporters</div>
+        <div className="section-kicker">04 / Community Supporters</div>
         <h2
           className="text-4xl sm:text-5xl font-black uppercase tracking-[-0.05em] leading-[0.9] mb-4"
           style={{ fontFamily: 'var(--display)' }}
@@ -67,12 +67,14 @@ export const SupportersWall: React.FC<SupportersWallProps> = ({ donors, onOpenDo
         </div>
 
         {/* Quick Join Callout */}
-        <button
-          onClick={onOpenDonate}
-          className="button-pop button-pop-primary py-3.5 px-8 text-xs sm:text-sm font-black"
+        <a
+          href={PAYPAL_POOL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button-pop button-pop-primary py-3.5 px-8 text-xs sm:text-sm font-black inline-flex items-center justify-center"
         >
           <span>Join the Supporter Wall via PayPal ↗</span>
-        </button>
+        </a>
       </div>
     </section>
   );

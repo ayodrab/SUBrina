@@ -1,13 +1,13 @@
 import React from 'react';
 import { Sparkles, ArrowDown } from 'lucide-react';
+import { PAYPAL_POOL_URL } from '../data';
 
 interface HeroProps {
   totalRaised: number;
   goal: number;
-  onOpenDonate: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ totalRaised, goal, onOpenDonate }) => {
+export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
   const percent = Math.min(100, Math.round((totalRaised / goal) * 100));
 
   return (
@@ -42,18 +42,20 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal, onOpenDonate }) =
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              onClick={onOpenDonate}
-              className="button-pop button-pop-primary py-4 px-8 text-sm sm:text-base font-black"
+            <a
+              href={PAYPAL_POOL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-pop button-pop-primary py-4 px-8 text-sm sm:text-base font-black inline-flex items-center justify-center"
             >
               <span>Chip in via PayPal Pool ↗</span>
-            </button>
+            </a>
 
             <a
-              href="#system"
+              href="#events"
               className="button-pop button-pop-secondary py-4 px-7 text-xs sm:text-sm font-black"
             >
-              <span>Explore the System ↓</span>
+              <span>Upcoming Events ↓</span>
             </a>
           </div>
         </div>
@@ -71,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal, onOpenDonate }) =
               €{goal.toLocaleString()}
             </div>
             <p className="text-xs text-[#fdf4ff]/70 mt-1 font-medium">
-              Transparent DIY budget for birch plywood, 5-driver horns, amps & Horner subs
+              €8,500 for materials and hardware — birch plywood, 5-driver horns, amps & Horner subs
             </p>
           </div>
 
