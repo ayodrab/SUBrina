@@ -10,11 +10,11 @@ export const Manifesto: React.FC = () => {
         <div className="rounded-[1.8rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#f43f5e] overflow-hidden transition-all duration-300">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full p-6 sm:p-8 flex items-center justify-between gap-4 text-left hover:bg-[#2e1065]/50 transition-colors cursor-pointer group"
+            className="w-full p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left hover:bg-[#2e1065]/50 transition-colors cursor-pointer group"
             aria-expanded={isOpen}
           >
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-              <span className="sticker bg-[#fde047] text-[#1e0538] text-[10px] sm:text-xs">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
                 OUR ORIGIN STORY
               </span>
               <div>
@@ -30,8 +30,8 @@ export const Manifesto: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#fde047] shrink-0 bg-[#19092b] px-4 py-2.5 rounded-full border border-white/10 group-hover:border-[#fde047] transition-colors">
-              <span>{isOpen ? 'Collapse Story' : 'Unfurl Story'}</span>
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#fde047] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2.5 rounded-full border border-white/10 group-hover:border-[#fde047] transition-colors">
+              <span>{isOpen ? 'Collapse' : 'Story'}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-300 ${
                   isOpen ? 'rotate-180 text-[#f43f5e]' : ''

@@ -134,23 +134,23 @@ export const TheSoundSystem: React.FC = () => {
         <div className="rounded-[1.6rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#f43f5e] overflow-hidden transition-all duration-300">
           <button
             onClick={() => setIsDeepDiveOpen(!isDeepDiveOpen)}
-            className="w-full p-5 sm:p-7 flex items-center justify-between gap-4 text-left hover:bg-[#2e1065]/50 transition-colors cursor-pointer group"
+            className="w-full p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left hover:bg-[#2e1065]/50 transition-colors cursor-pointer group"
             aria-expanded={isDeepDiveOpen}
           >
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-              <span className="sticker bg-[#fde047] text-[#1e0538] text-[10px] sm:text-xs">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
                 WHY IT SOUNDS DIFFERENT
               </span>
               <h3
-                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors"
+                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors leading-tight"
                 style={{ fontFamily: 'var(--display)' }}
               >
                 Why a Multiple Entry Horn? (The Acoustic Magic)
               </h3>
             </div>
 
-            <div className="flex items-center gap-2.5 text-xs font-black uppercase tracking-wider text-[#fde047] shrink-0 bg-[#19092b] px-4 py-2 rounded-full border border-white/10 group-hover:border-[#fde047] transition-colors">
-              <span>{isDeepDiveOpen ? 'Collapse Details' : 'Unfurl Deep Dive'}</span>
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#fde047] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2 rounded-full border border-white/10 group-hover:border-[#fde047] transition-colors">
+              <span>{isDeepDiveOpen ? 'Collapse' : 'Deep Dive'}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-300 ${
                   isDeepDiveOpen ? 'rotate-180 text-[#f43f5e]' : ''
