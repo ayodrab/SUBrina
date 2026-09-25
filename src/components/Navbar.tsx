@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ totalRaised, goal }) => {
   const navLinks = [
     { label: 'Events', href: '#events' },
     { label: 'The Sound', href: '#system' },
-    { label: 'FUNdraiser', href: '#fundraiser' },
+    { label: 'FUNdraiser & Budget', href: '#fundraiser' },
     { label: 'Supporters', href: '#supporters' },
     { label: 'Origin & FAQ', href: '#faq' },
   ];
@@ -28,16 +28,14 @@ export const Navbar: React.FC<NavbarProps> = ({ totalRaised, goal }) => {
             <span className="text-2xl leading-none select-none">👾</span>
           </div>
           <div className="flex flex-col">
-            <div className="flex items-baseline gap-1.5">
-              <span
-                className="text-2xl sm:text-3xl font-black tracking-tight text-[#fdf4ff] uppercase leading-none"
-                style={{ fontFamily: 'var(--display)' }}
-              >
-                SUB<span className="text-[#f43f5e]">RINA</span>
-              </span>
-            </div>
-            <span className="text-[11px] font-bold text-[#fde047] tracking-wider uppercase">
-              the teenage soundsystem.
+            <span
+              className="text-2xl sm:text-3xl font-black tracking-tight text-[#fdf4ff] uppercase leading-none"
+              style={{ fontFamily: 'var(--display)' }}
+            >
+              SUB<span className="text-[#f43f5e]">RINA</span>
+            </span>
+            <span className="text-[10px] font-black uppercase tracking-wider text-[#fde047] leading-none mt-1">
+              the bass monster
             </span>
           </div>
         </a>

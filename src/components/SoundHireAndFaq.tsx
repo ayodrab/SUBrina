@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, ChevronDown, Sparkles, MessageCircle, HelpCircle } from 'lucide-react';
+import { Send, ChevronDown, MessageCircle } from 'lucide-react';
 
 export const SoundHireAndFaq: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -11,19 +11,19 @@ export const SoundHireAndFaq: React.FC = () => {
     },
     {
       q: 'How can the sound system be transported and set up?',
-      a: 'The entire system was designed around manageable dimensions and weight. The 2 SAWMOD horn tops and 4 Horner 18" subwoofers fit into a standard long-wheelbase van (like a Sprinter or Crafter). Setup and acoustic calibration take about 90 minutes.'
+      a: 'It actually fits in a smaller van or car! It doesn\'t have to be a long wheelbase van. It can fit in something as small as a Renault Kangoo, a family SUV, or a Miles L (or parts of it in a Miles M, depending on how many subs). You definitely don\'t need a crazy big truck.'
     },
     {
       q: 'What kind of music sounds best on SUBrina?',
-      a: 'Everything from deep dubstep, jungle, and ghetto house to ambient listening and live acoustic sets! Because of the Multiple Entry Horn point-source design, transient response and vocal clarity are crystal clear across all genres.'
+      a: 'Honestly, all music sounds fantastic on SUBrina. The system has really deep and clear bass, crystal clear point-source transient response, and pristine vocal clarity without even needing excessive EQ. But yeah, deep bassy music also sounds fucking amazing because we have four big fat subwoofers for that dirty stinking bass. (Fun acoustic fact: human body resonance kicks in around 30–40 Hz, and at ~18 Hz your actual eyeballs can vibrate — SUBrina’s 18" reflex subs reach right down to 30 Hz so you feel the music in your skeleton).'
     },
     {
       q: 'Who is Horner Audio and why are they helping?',
-      a: 'Horner Audio are brilliant sound engineers and craftsmen in Berlin who design high-performance acoustic enclosures. They are acting as our building partners, generously donating their time, CNC machinery, and acoustic mentorship to help Burcu & Ayo bring SUBrina to life.'
+      a: 'Horner Audio is Carlo, who is a really sweetie pie who has helped build other community sound systems in Berlin (specifically helping Angel Audio, a FLINTA-based music collective). We met him at a workshop they were hosting and were asking questions about how to bring this kind of sound system to life. He shared a lot of useful information, including: "I can help you build it."'
     },
     {
       q: 'Can I donate anonymously or with a custom perk?',
-      a: 'Absolutely. In the PayPal pool you can leave any note or donate anonymously. We appreciate every bit of support from our friends and community.'
+      a: 'Absolutely. In the PayPal pool you can leave any note or donate anonymously. We appreciate every single bit of support from our friends and community.'
     }
   ];
 
@@ -33,15 +33,11 @@ export const SoundHireAndFaq: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-start">
           {/* FAQ Column */}
           <div>
-            <div className="section-kicker">05 / Frequently Asked Questions</div>
             <h2
-              className="text-4xl sm:text-5xl font-black uppercase tracking-[-0.05em] leading-[0.9] mb-8"
+              className="text-4xl sm:text-5xl font-black uppercase tracking-tight mb-8"
               style={{ fontFamily: 'var(--display)' }}
             >
-              Sound, Hire &<br />
-              <em className="text-[#ec4899] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
-                Community Rig FAQ.
-              </em>
+              FAQ
             </h2>
 
             <div className="space-y-4">
@@ -78,42 +74,29 @@ export const SoundHireAndFaq: React.FC = () => {
             </div>
 
             <span className="text-xs font-black uppercase tracking-wider text-[#38bdf8] block mb-1">
-              Direct Telegram Chat
+              Have a question? Message us
             </span>
             <h3
               className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-3 text-[#fdf4ff]"
               style={{ fontFamily: 'var(--display)' }}
             >
-              Message Burcu & Ayo
+              Message Ayo
             </h3>
 
             <p className="text-xs sm:text-sm text-[#fdf4ff]/80 leading-relaxed font-normal mb-8">
-              Got a gig idea, want to collaborate, or have questions about the build? Send a message directly to Burcu and Ayo on Telegram!
+              Got a question about the build, want to invite SUBrina to play, or just want to say hi? Send Ayo a message directly on Telegram!
             </p>
 
             <div className="space-y-3">
               <a
-                href="https://t.me/subrinasound"
+                href="https://t.me/ayodrab"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full button-pop button-pop-primary py-3.5 px-6 text-xs sm:text-sm font-black text-center flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
-                <span>Message on Telegram ↗</span>
+                <span>Message @ayodrab on Telegram ↗</span>
               </a>
-
-              <a
-                href="mailto:contact@subrina.sound"
-                className="w-full block py-3 px-6 rounded-full border border-white/20 hover:border-[#fde047] text-center text-xs font-bold text-white/80 hover:text-white transition-colors"
-              >
-                Or Email: contact@subrina.sound
-              </a>
-            </div>
-
-            <div className="mt-6 pt-5 border-t border-white/10 text-center">
-              <span className="text-[11px] font-mono text-[#fde047]">
-                ⚡ Quick reply guaranteed from Burcu & Ayo
-              </span>
             </div>
           </div>
         </div>

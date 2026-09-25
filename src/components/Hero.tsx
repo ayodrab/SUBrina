@@ -36,27 +36,26 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
       <div className="absolute top-1/3 -right-48 w-96 h-96 rounded-full bg-[#a855f7]/20 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 z-10">
-        {/* Clean Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#19092b]/80 backdrop-blur-md border border-[#fde047]/30 text-[#fde047] font-black tracking-widest text-xs sm:text-sm mb-4">
-          <span>🔊 Acoustic Physics · Multiple Entry Horns · Built with Horner Audio</span>
-        </div>
-
         {/* Hero Content */}
         <div className="max-w-3xl my-6 sm:my-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538] border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] mb-5 select-none">
+            <span>👾</span>
+            <span>The Bass Monster</span>
+          </div>
+
           <h1
             className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-[-0.05em] leading-[0.88] mb-8 drop-shadow-md"
             style={{ fontFamily: 'var(--display)' }}
           >
-            SUBrina<br />
-            the teenage<br />
+            SUBrina,<br />
             <em className="text-[#ec4899] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
-              soundsystem.
+              the sound system of our dreams.
             </em>
           </h1>
 
           {/* Confident Copy */}
           <p className="text-lg sm:text-xl text-[#fdf4ff]/95 max-w-2xl font-normal leading-relaxed mb-10 drop-shadow-sm">
-            SUBrina is our dream of pristine, uncompromising DIY sound — built to power intimate community parties, our kiezburn soundcamp, and cultural gatherings across Berlin with warm, chest-punching bass and zero ear fatigue.
+            We're building the sound system of our dreams with big, fat, super crispy clear sound.
           </p>
 
           {/* CTAs */}
@@ -92,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
               €{goal.toLocaleString()}
             </div>
             <p className="text-xs text-[#fdf4ff]/70 mt-1 font-medium">
-              €8,500 for materials and hardware — birch plywood, 5-driver horns, amps & Horner subs
+              Flagship Neo Build — Baltic birch flatpacks, 5-driver horns, amps, DSP & Horner subs
             </p>
           </div>
 
@@ -132,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
       <div className="mt-14 -rotate-1 scale-105 bg-[#fde047] text-[#19092b] border-y-3 border-[#1e0538] shadow-[0_6px_0_#ec4899]">
         <div className="ticker-tape">
           <div className="ticker-track">
-            <span>✳ SUBRINA · THE TEENAGE SOUNDSYSTEM</span>
+            <span>✳ SUBRINA — THE BASS MONSTER</span>
             <span>✦ BUILT BY BURCU & AYO WITH HORNER AUDIO</span>
             <span>☻ MULTIPLE ENTRY HORN COHERENCE</span>
             <span>✳ 4 × 18" HORNER REFLEX SUBWOOFERS</span>
@@ -141,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
             <span>✳ CHIP IN ON PAYPAL POOL</span>
           </div>
           <div className="ticker-track" aria-hidden="true">
-            <span>✳ SUBRINA · THE TEENAGE SOUNDSYSTEM</span>
+            <span>✳ SUBRINA — THE BASS MONSTER</span>
             <span>✦ BUILT BY BURCU & AYO WITH HORNER AUDIO</span>
             <span>☻ MULTIPLE ENTRY HORN COHERENCE</span>
             <span>✳ 4 × 18" HORNER REFLEX SUBWOOFERS</span>

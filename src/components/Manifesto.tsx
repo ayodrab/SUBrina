@@ -22,10 +22,10 @@ export const Manifesto: React.FC = () => {
                   className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors leading-tight"
                   style={{ fontFamily: 'var(--display)' }}
                 >
-                  Mission & Origin: Taking sound into our own hands
+                  Our Origin Story
                 </h3>
                 <p className="text-xs sm:text-sm text-[#fdf4ff]/70 font-medium mt-1">
-                  How Burcu & Ayo decided to build SUBrina with Horner Audio
+                  How Burcu & Ayo decided to build SUBrina
                 </p>
               </div>
             </div>
@@ -44,32 +44,20 @@ export const Manifesto: React.FC = () => {
             <div className="px-6 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-[#2e1065] animate-in fade-in slide-in-from-top-2 duration-200">
               <div className="max-w-3xl space-y-6 text-base sm:text-lg text-[#fdf4ff]/90 leading-relaxed font-normal">
                 <p className="text-xl sm:text-2xl font-bold text-[#fde047] leading-snug">
-                  We met on the dancefloor and have been active in the nightlife scene as dancers, performers, and DJs for a really long time.
+                  We’ve been putting on events with our friends for a long time, and honestly: often the sound systems are just shit.
                 </p>
 
                 <p>
-                  Putting on events ourselves — with Burcu’s Agentur für Nightlife and Ayo’s involvement with Heart Chor — one thing kept coming up: subpar technical setups. Too often, DIY venues and underground parties suffer from harsh, fatigued sound systems that just aren’t up to scratch.
+                  We play at different gatherings and gatherings like Kiezburn — which is <em>not</em> a festival technically, and it's very important for the burners that we say that 😉 — and we got tired of having shitty sound systems that are improvised. People have a lot of good intentions, but not such good technical equipment.
                 </p>
 
                 <p>
-                  We decided to take matters into our own hands and build something truly exceptional for our community. A state-of-the-art soundsystem based on exciting innovative designs — specifically a <strong>Multiple Entry Horn</strong> that delivers tight, spacious, accurate, and very present sound.
+                  So we thought: we need something much better in our scene. What is the absolute best that we can do that can be transported, taken to multiple places, and looks beautiful and fun?
                 </p>
 
                 <p>
-                  We are super grateful to <strong>Horner Audio</strong>, who are acting as our building partner and being extremely generous with their time, acoustic expertise, and workshop machinery to bring SUBrina to life.
+                  It can be used indoors and outdoors, and each box weighs around 40 kilos maximum so that they can be carried even into the forest. And it’s not just a sound system — it’s a character with its own personality.
                 </p>
-
-                <div className="pt-4 border-t border-white/15 flex flex-wrap items-center gap-3">
-                  <span className="sticker bg-[#fde047] text-[#1e0538]">
-                    BUILT WITH LOVE
-                  </span>
-                  <span className="sticker bg-[#f43f5e] text-white">
-                    HORNER AUDIO PARTNER
-                  </span>
-                  <span className="sticker bg-[#38bdf8] text-[#1e0538]">
-                    ZERO EAR FATIGUE
-                  </span>
-                </div>
               </div>
             </div>
           )}

@@ -1,8 +1,91 @@
-import { Donor, BudgetItem, EventItem, CrewMember, DonationTier, FundraisingMilestone } from './types';
+import { Donor, BudgetItem, EventItem, CrewMember, DonationTier, FundraisingMilestone, BudgetData } from './types';
 
-export const PAYPAL_POOL_URL = 'https://paypal.me/subrinasoundsystem';
+export const PAYPAL_POOL_URL = 'https://www.paypal.com/pool/9sXuCfXhbW?sr=ancr';
 
-export const INITIAL_FUNDRAISING_GOAL = 8500;
+export const INITIAL_FUNDRAISING_GOAL = 11385;
+
+export const FLAGSHIP_NEO_BUDGET: BudgetData = {
+  project: "SUBrina Soundsystem (Flagship Neo Build)",
+  location: "Germany",
+  currency: "EUR",
+  buffer_percentage: 10,
+  summary: {
+    net_subtotal: 10350,
+    contingency_buffer: 1035,
+    grand_total: 11385
+  },
+  categories: [
+    {
+      id: "tops",
+      name: "SAWMOD Tops (2 Cabinets)",
+      subtotal: 2090,
+      items: [
+        { name: "CNC 12 mm Baltic Birch Flatpacks", cost: 400 },
+        { name: "3D-Printed Waveguide & Flange Set (PET-CF)", cost: 170 },
+        { name: "4 x B&C 10NDL88 LF Drivers (10\")", cost: 780 },
+        { name: "4 x B&C 4NDF34 MF Drivers (4\")", cost: 320 },
+        { name: "2 x B&C DE360 / DH450H HF Drivers (1\")", cost: 260 },
+        { name: "Hardware, Neutrik NL8 Sockets, Grilles & Foam", cost: 160 }
+      ]
+    },
+    {
+      id: "subs",
+      name: "18\" Reflex Subwoofers (4 Cabinets)",
+      subtotal: 3600,
+      items: [
+        { name: "CNC 18 mm Baltic Birch Flatpacks (Braced)", cost: 900 },
+        { name: "4 x B&C 18DS115-8 Neodymium Drivers (18\")", cost: 2220 },
+        { name: "M20 Pole Sockets, Bar Handles & Feet", cost: 260 },
+        { name: "Powder-Coated Steel Grilles & Acoustic Foam", cost: 220 }
+      ]
+    },
+    {
+      id: "amplification",
+      name: "Amplification, DSP & Rack",
+      subtotal: 2200,
+      items: [
+        { name: "Sub Amp: Sinbosen FP14000 / D2-3000 Class-D", cost: 830 },
+        { name: "Top Amp: Sinbosen FP10000Q / D4-2000 Class-D", cost: 750 },
+        { name: "Standalone 4-in / 8-out DSP Unit", cost: 350 },
+        { name: "Shock-Mount Flight Case (8U/10U on Wheels)", cost: 270 }
+      ]
+    },
+    {
+      id: "cabling",
+      name: "Cabling, Connectors & Patch Bay",
+      subtotal: 700,
+      items: [
+        { name: "2 x 15 m 8x2.5 mm² Sommer Elephant NL8 Mains", cost: 220 },
+        { name: "NL4 Sub Cables & Jumpers (4x4 mm²)", cost: 150 },
+        { name: "Neutrik Connectors & XLR Patch Lines", cost: 110 },
+        { name: "Custom 1U Pre-Wired Rack Patch Panel", cost: 120 },
+        { name: "16 A CEE / Schuko Power Distribution Block", cost: 100 }
+      ]
+    },
+    {
+      id: "finish",
+      name: "Chrome Epoxy Finish & Hardware",
+      subtotal: 800,
+      items: [
+        { name: "Wood Sealer & 2K Black Basecoat", cost: 130 },
+        { name: "2K Ultra-Clear Epoxy Resin & Chrome Pigment", cost: 240 },
+        { name: "2K PU Protective Clear Topcoat", cost: 110 },
+        { name: "Consumables, Abrasives & Fasteners", cost: 185 },
+        { name: "2 x K&M 21339 M20 Distance Poles", cost: 135 }
+      ]
+    },
+    {
+      id: "covers",
+      name: "Fluffy Plush-Lined Slipcovers (6 Units)",
+      subtotal: 960,
+      items: [
+        { name: "4 x 18\" Subcovers (EPE Foam + Faux-Fur Lining)", cost: 540 },
+        { name: "2 x SAWMOD Topcovers (Trapezoidal + Faux-Fur)", cost: 320 },
+        { name: "Heavy-Duty Zippers, Cinch Straps & Accents", cost: 100 }
+      ]
+    }
+  ]
+};
 
 export const FUNDRAISING_MILESTONES: FundraisingMilestone[] = [
   {
@@ -128,31 +211,31 @@ export const UPCOMING_EVENTS: EventItem[] = [
   {
     id: 'ev-1',
     title: 'SUBrina FUNdraiser: Round 01 @ Lark',
-    subtitle: 'First gathering & FUNdraiser dance',
+    subtitle: '',
     date: '2026-10-09',
-    formattedDate: 'FRI, OCT 09 • 22:00 - LATE',
-    time: '22:00 - LATE',
+    formattedDate: 'OCTOBER 9 · 21:00 – 04:00',
+    time: '21:00 – 04:00',
     venue: 'Lark, Berlin',
     city: 'Berlin',
-    description: 'Join Burcu and Ayo for the inaugural SUBrina FUNdraiser party at Lark. Quality selectors, good friends, and every single euro goes straight into plywood, drivers, and amplification.',
+    description: 'Join Burcu & Ayo (B2B) alongside friends and community selectors for our inaugural FUNdraiser dance at Lark. Every single euro goes straight into plywood flatpacks, drivers, and amplification.',
     lineup: ['Burcu & Ayo (B2B)', 'Friends & Community Selectors'],
-    tags: ['FUNdraiser Dance', 'Lark Berlin', 'Round 01'],
-    ticketPrice: 'Donations at door / Suggested €10-15',
+    tags: ['Lark Berlin'],
+    ticketPrice: 'Donations at door',
     status: 'upcoming'
   },
   {
     id: 'ev-2',
-    title: 'SUBrina FUNdraiser: Round 02 @ Secret Venue, Neukölln',
-    subtitle: 'Late night bass session & community gathering',
+    title: 'SUBrina FUNdraiser: Round 02 @ Secret Venue',
+    subtitle: '',
     date: '2026-11-21',
-    formattedDate: 'SAT, NOV 21 • 23:00 - LATE',
-    time: '23:00 - VERY LATE',
-    venue: 'Secret Venue in Neukölln (The Other Side)',
+    formattedDate: 'NOVEMBER 21 · 21:00 – 04:00',
+    time: '21:00 – 04:00',
+    venue: 'Secret Venue',
     city: 'Berlin',
-    description: 'Round two of our FUNdraiser journey in an intimate secret venue in Neukölln. Deep grooves, heavy soundsystem music, and warm community vibes into the dawn.',
-    lineup: ['Special Guests TBA', 'Burcu', 'Ayo'],
-    tags: ['Secret Venue', 'Neukölln', 'Round 02'],
-    ticketPrice: 'Donations / FUNdraiser Entry',
+    description: 'More information TBA.',
+    lineup: ['Special Guests TBA'],
+    tags: ['Secret Venue'],
+    ticketPrice: 'Donations at door',
     status: 'upcoming'
   }
 ];

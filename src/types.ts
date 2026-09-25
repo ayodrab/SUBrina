@@ -33,6 +33,33 @@ export interface BudgetItem {
   specs: string;
 }
 
+export interface BudgetLineItem {
+  name: string;
+  cost: number;
+}
+
+export interface BudgetCategory {
+  id: string;
+  name: string;
+  subtotal: number;
+  items: BudgetLineItem[];
+}
+
+export interface BudgetSummary {
+  net_subtotal: number;
+  contingency_buffer: number;
+  grand_total: number;
+}
+
+export interface BudgetData {
+  project: string;
+  location: string;
+  currency: string;
+  buffer_percentage: number;
+  summary: BudgetSummary;
+  categories: BudgetCategory[];
+}
+
 export interface EventItem {
   id: string;
   title: string;

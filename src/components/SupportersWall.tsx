@@ -12,15 +12,11 @@ export const SupportersWall: React.FC<SupportersWallProps> = ({ donors }) => {
     <section id="supporters" className="py-20 sm:py-24 px-4 sm:px-6 md:px-10 bg-[#25123d] text-[#fdf4ff] border-t-2 border-[#2e1065]">
       <div className="max-w-4xl mx-auto text-center">
         {/* Compact Heading */}
-        <div className="section-kicker">04 / Community Supporters</div>
         <h2
-          className="text-4xl sm:text-5xl font-black uppercase tracking-[-0.05em] leading-[0.9] mb-4"
+          className="text-4xl sm:text-5xl font-black uppercase tracking-tight mb-4"
           style={{ fontFamily: 'var(--display)' }}
         >
-          Our Backer Wall.<br />
-          <em className="text-[#fde047] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
-            Powering the Dream.
-          </em>
+          Supporters
         </h2>
         <p className="text-sm sm:text-base text-[#fdf4ff]/80 max-w-lg mx-auto mb-10 font-normal leading-relaxed">
           Every contribution directly buys Baltic birch plywood, high-power drivers, and amplification.
@@ -71,9 +67,9 @@ export const SupportersWall: React.FC<SupportersWallProps> = ({ donors }) => {
           href={PAYPAL_POOL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="button-pop button-pop-primary py-3.5 px-8 text-xs sm:text-sm font-black inline-flex items-center justify-center"
+          className="button-pop button-pop-primary py-3.5 px-8 text-xs sm:text-sm font-black inline-flex items-center justify-center shadow-md hover:scale-[1.02] active:scale-[0.98] transition-transform"
         >
-          <span>Join the Supporter Wall via PayPal ↗</span>
+          <span>Support ↗</span>
         </a>
       </div>
     </section>

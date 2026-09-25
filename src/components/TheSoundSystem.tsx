@@ -1,27 +1,52 @@
 import React, { useState } from 'react';
-import { ChevronDown, Volume2, Sparkles, Sliders, Zap, Check } from 'lucide-react';
+import { ChevronDown, Volume2, Sparkles, Sliders, Zap, Check, Maximize2, X } from 'lucide-react';
+import litUpSawmodImg from '../assets/images/lit_up_sawmod.jpg';
+import subLightImg from '../assets/images/sub_light.jpeg';
 
 export const TheSoundSystem: React.FC = () => {
   const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
+  const [activeModalImage, setActiveModalImage] = useState<{
+    src: string;
+    title: string;
+    tag: string;
+    description: string;
+    specs: string;
+  } | null>(null);
 
   const cards = [
     {
+      id: 'sawmod-tops',
       emoji: '🎺',
       tag: 'Heart of the Rig',
       title: '2 × SAWMOD Tops',
       designer: 'Designed by JW Audio',
       summary: '5 speaker drivers inside each cabinet, all firing out of the exact same horn flare.',
+      image: litUpSawmodImg,
+      imageAlt: 'Illuminated JW Audio SAWMOD multiple entry horn throat showing driver convergence',
+      imageBadge: 'Illuminated Horn Flare',
+      modalTag: 'JW Audio Prototype',
+      modalTitle: '2 × SAWMOD Tops — Multiple Entry Horn Illuminated',
+      modalDescription: 'Look inside the throat: five drivers enter the acoustic chamber through precision-machined ports to fire out as one single point-source wavefront.',
+      modalSpecs: '5 Drivers • 1 Horn Flare',
       bg: 'bg-[#fdf4ff] text-[#1e0538]',
       tilt: 'tilt-left',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#f43f5e]',
       badgeColor: 'bg-[#f43f5e] text-white',
     },
     {
+      id: 'reflex-subs',
       emoji: '🔊',
       tag: 'Physical Low End',
       title: '4 × 18" Reflex Subs',
       designer: 'Designed by Horner Audio',
-      summary: 'Four tuned 18-inch reflex subwoofers for huge, effortless physical bass without muddy distortion.',
+      summary: 'Four (yes FOUR!) tuned 18-inch reflex subwoofers for huge, effortless physical bass without muddy distortion.',
+      image: subLightImg,
+      imageAlt: 'Horner Audio tuned 18-inch reflex subwoofers illuminated in the workshop',
+      imageBadge: '18" Horner Audio Sub',
+      modalTag: 'Horner Audio Subwoofer',
+      modalTitle: '4 × 18" Reflex Subwoofers in Action',
+      modalDescription: 'Precision tuned 18-inch bass reflex design providing deep physical authority and fast transient low-end response down to 30 Hz.',
+      modalSpecs: '4 × 18" High-Excursion Reflex',
       bg: 'bg-[#fde047] text-[#1e0538]',
       tilt: 'tilt-right',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
@@ -77,22 +102,16 @@ export const TheSoundSystem: React.FC = () => {
     <section id="system" className="py-20 sm:py-28 px-4 sm:px-6 md:px-10 bg-[#19092b] text-[#fdf4ff]">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_0.6fr] gap-8 items-end mb-16">
-          <div>
-            <div className="section-kicker">02 / The Sound System</div>
-            <h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.05em] leading-[0.9]"
-              style={{ fontFamily: 'var(--display)' }}
-            >
-              Exciting innovative<br />
-              <em className="text-[#f43f5e] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
-                sound architecture.
-              </em>
-            </h2>
-          </div>
-          <p className="text-base sm:text-lg text-[#fdf4ff]/80 leading-relaxed font-normal">
-            Specifically designed around a Multiple Entry Horn which ensures fantastic sonic coherence, delivering a tight, spacious, accurate, and very present sound.
-          </p>
+        <div className="mb-14">
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.05em] leading-[0.9]"
+            style={{ fontFamily: 'var(--display)' }}
+          >
+            SUBrina,<br />
+            <em className="text-[#f43f5e] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
+              candy to our ears.
+            </em>
+          </h2>
         </div>
 
         {/* 6 Playful Animated Cards */}
@@ -121,6 +140,39 @@ export const TheSoundSystem: React.FC = () => {
                 <div className="text-xs font-bold uppercase tracking-wider opacity-75 mb-3">
                   {c.designer}
                 </div>
+
+                {/* Direct photo in card */}
+                {c.image && (
+                  <div
+                    className="my-3.5 relative rounded-xl overflow-hidden border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] bg-black group cursor-pointer"
+                    onClick={() =>
+                      setActiveModalImage({
+                        src: c.image!,
+                        title: c.modalTitle || c.title,
+                        tag: c.modalTag || c.tag,
+                        description: c.modalDescription || c.summary,
+                        specs: c.modalSpecs || '',
+                      })
+                    }
+                  >
+                    <img
+                      src={c.image}
+                      alt={c.imageAlt || c.title}
+                      className="w-full h-44 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex items-end p-2.5">
+                      <div className="flex items-center justify-between w-full text-[11px] font-bold text-white">
+                        <span className="text-[#fde047] flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-[#f43f5e] animate-pulse"></span>
+                          {c.imageBadge || 'View Photo'}
+                        </span>
+                        <span className="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded text-[10px] text-white/90 flex items-center gap-1 group-hover:bg-[#f43f5e] transition-colors">
+                          <Maximize2 className="w-3 h-3" /> Zoom
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 <p className="text-xs sm:text-sm font-medium leading-relaxed opacity-90">
                   {c.summary}
@@ -161,7 +213,7 @@ export const TheSoundSystem: React.FC = () => {
 
           {isDeepDiveOpen && (
             <div className="px-6 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-[#2e1065] animate-in fade-in slide-in-from-top-2 duration-200">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
                 <div>
                   <h4
                     className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#fdf4ff] mb-4"
@@ -180,16 +232,20 @@ export const TheSoundSystem: React.FC = () => {
                 {/* Quick Graphic Specs */}
                 <div className="p-6 rounded-2xl bg-[#19092b] border-2 border-[#2e1065] text-xs font-bold space-y-3">
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
-                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Horn Model</span>
-                    <span className="text-[#fde047]">SAWMOD by JW Audio</span>
+                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Horn Architecture</span>
+                    <span className="text-[#fde047]">SAWMOD Multiple Entry Horn</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Designer</span>
+                    <span className="text-[#fde047]">JW Audio</span>
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
                     <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Drivers Per Top</span>
-                    <span className="text-[#f43f5e]">5 Drivers in 1 Horn</span>
+                    <span className="text-[#f43f5e]">5 Drivers in 1 Horn Throat</span>
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
                     <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Subwoofers</span>
-                    <span className="text-[#38bdf8]">4 × 18" Horner Audio</span>
+                    <span className="text-[#38bdf8]">4 × 18" Horner Audio Reflex</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Frequency Band</span>
@@ -200,6 +256,54 @@ export const TheSoundSystem: React.FC = () => {
             </div>
           )}
         </div>
+
+        {/* Modal preview when clicking any photo card */}
+        {activeModalImage && (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
+            onClick={() => setActiveModalImage(null)}
+          >
+            <div
+              className="relative max-w-4xl w-full bg-[#19092b] border-2 border-[#f43f5e] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(244,63,94,0.4)]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-4 sm:p-5 border-b border-[#2e1065] flex items-center justify-between bg-[#19092b]">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538]">
+                    {activeModalImage.tag}
+                  </span>
+                  <h4 className="text-base sm:text-lg font-black uppercase text-white truncate max-w-xs sm:max-w-md">
+                    {activeModalImage.title}
+                  </h4>
+                </div>
+                <button
+                  onClick={() => setActiveModalImage(null)}
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f43f5e] text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
+                  aria-label="Close modal"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="relative bg-black flex items-center justify-center max-h-[75vh]">
+                <img
+                  src={activeModalImage.src}
+                  alt={activeModalImage.title}
+                  className="w-full h-auto max-h-[75vh] object-contain"
+                />
+              </div>
+
+              <div className="p-4 sm:p-5 bg-[#25123d] border-t border-[#2e1065] text-xs sm:text-sm text-[#fdf4ff]/85 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-medium">
+                <span>{activeModalImage.description}</span>
+                {activeModalImage.specs && (
+                  <span className="text-[#fde047] font-bold shrink-0">
+                    {activeModalImage.specs}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

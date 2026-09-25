@@ -262,7 +262,7 @@ export const SubrinaLogo: React.FC<SubrinaLogoProps> = ({ className = '', showSu
       {showSubtitle && (
         <div className="mt-2 text-center">
           <span className="inline-block text-sm sm:text-base md:text-lg font-bold tracking-wider text-purple-200 uppercase bg-purple-950/80 px-4 py-1.5 rounded-full border border-purple-800/60 shadow-sm">
-            the teenage soundsystem
+            the soundsystem
           </span>
         </div>
       )}
