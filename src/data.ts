@@ -217,10 +217,18 @@ export const UPCOMING_EVENTS: EventItem[] = [
     time: '21:00 – 04:00',
     venue: 'Lark, Berlin',
     city: 'Berlin',
-    description: 'Join Burcu & Ayo (B2B) alongside friends and community selectors for our inaugural FUNdraiser dance at Lark. Every single euro goes straight into plywood flatpacks, drivers, and amplification.',
-    lineup: ['Burcu & Ayo (B2B)', 'Friends & Community Selectors'],
+    description: 'Join us for our inaugural FUNdraiser dance at Lark with sound healing, live electronic hardware, drag performance, and high-energy DJ sets. Every single euro goes straight into plywood flatpacks, drivers, and amplification.',
+    lineup: [
+      'Soundbath by Lai Raw',
+      'Live electronic set by Kallairaw',
+      'DJ set by JCow',
+      'B2B by asphalt angel & Juicy B',
+      'Zak & Luis (drag act)',
+      'Live Auction!'
+    ],
     tags: ['Lark Berlin'],
     ticketPrice: 'Donations at door',
+    ticketLink: 'https://ra.co/events/2545819',
     status: 'upcoming'
   },
   {

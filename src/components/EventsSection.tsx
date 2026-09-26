@@ -1,6 +1,6 @@
 import React from 'react';
 import { EventItem } from '../types';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 interface EventsSectionProps {
   events: EventItem[];
@@ -47,17 +47,46 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ events }) => {
                   {ev.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed mb-6 font-medium opacity-90">
+                <p className="text-sm leading-relaxed mb-5 font-medium opacity-90">
                   {ev.description}
                 </p>
+
+                {/* Lineup & Program */}
+                {ev.lineup && ev.lineup.length > 0 && (
+                  <div className="mb-6 pt-4 border-t border-current/15">
+                    <span className="text-[11px] font-black uppercase tracking-wider block mb-2.5 opacity-75">
+                      Lineup & Program
+                    </span>
+                    <ul className="space-y-1.5 text-xs sm:text-sm font-bold">
+                      {ev.lineup.map((act, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-[#f43f5e] shrink-0 font-mono">✦</span>
+                          <span>{act}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
-              {/* Footer with Venue */}
-              <div className="pt-4 border-t border-current/20 flex items-center justify-between gap-4">
+              {/* Footer with Venue & Optional Resident Advisor Link */}
+              <div className="pt-4 border-t border-current/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold">
                   <MapPin className="w-4 h-4 shrink-0 text-[#f43f5e]" />
                   <span>{ev.venue}</span>
                 </div>
+
+                {ev.ticketLink && (
+                  <a
+                    href={ev.ticketLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider bg-[#1e0538] text-white hover:bg-[#ec4899] hover:text-white transition-colors border border-black/20 shadow-[2px_2px_0_#1e0538] shrink-0"
+                  >
+                    <span>Resident Advisor</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
             </div>
           ))}
