@@ -110,8 +110,8 @@ export const FUNDRAISING_MILESTONES: FundraisingMilestone[] = [
     id: 'milestone-3',
     targetAmount: 8500,
     title: '4 × 18" Reflex Subwoofers',
-    summary: 'Complete system ready to shake dances up to 400 people',
-    details: 'Designed by Horner Audio. Four 18-inch reflex subwoofers for huge, effortless physical bass indoors and outdoors.',
+    summary: 'Complete rig covering 200–250 core dancers and 500–800 event guests',
+    details: 'Designed by Horner Audio. Four 18-inch reflex subwoofers for huge, effortless physical bass (100–105 dBA core) and clean peripheral sound up to 40 meters away.',
     isKeyHeart: false,
     tag: 'Full Rig Complete'
   }
@@ -240,8 +240,12 @@ export const UPCOMING_EVENTS: EventItem[] = [
     time: '21:00 – 04:00',
     venue: 'Secret Venue',
     city: 'Berlin',
-    description: 'More information TBA.',
-    lineup: ['Special Guests TBA'],
+    description: 'Round 02 of our SUBrina FUNdraiser series! Immersive soundbath, live electronic instrumentation, and DJ curation into the early morning. Venue announced closer to the date.',
+    lineup: [
+      'Soundbath by SIC and Simon Hoffman (electronic & Cello)',
+      'Live set by Avi Schneider',
+      'More acts & DJs TBA'
+    ],
     tags: ['Secret Venue'],
     ticketPrice: 'Donations at door',
     status: 'upcoming'

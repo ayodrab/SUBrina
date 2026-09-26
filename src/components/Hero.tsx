@@ -12,10 +12,10 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
   const percent = Math.min(100, Math.round((totalRaised / goal) * 100));
 
   return (
-    <section className="relative overflow-hidden bg-[#19092b] text-[#fdf4ff] pt-12 sm:pt-20 pb-20 sm:pb-28">
+    <section className="relative overflow-hidden bg-[#19092b] text-[#fdf4ff] pt-6 sm:pt-10 pb-12 sm:pb-16">
       {/* Background Hero Image with Directional Gradient for Readability */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-start sm:items-center justify-center lg:justify-end">
-        <div className="relative w-full lg:w-[88%] xl:w-[82%] 2xl:w-[78%] h-full flex items-start sm:items-center justify-center lg:justify-end pt-8 sm:pt-0">
+        <div className="relative w-full lg:w-[88%] xl:w-[82%] 2xl:w-[78%] h-full flex items-start sm:items-center justify-center lg:justify-end pt-2 sm:pt-0">
           <img
             src={subrinaMockupWide}
             alt="SUBrina Sound System Render"
@@ -36,14 +36,9 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 z-10">
         {/* Hero Content */}
-        <div className="max-w-3xl my-6 sm:my-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538] border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] mb-5 select-none">
-            <span>👾</span>
-            <span>The Bass Monster</span>
-          </div>
-
+        <div className="max-w-3xl my-2 sm:my-4">
           <h1
-            className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-[-0.05em] leading-[0.88] mb-8 drop-shadow-md"
+            className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-[-0.05em] leading-[0.88] mb-6 drop-shadow-md"
             style={{ fontFamily: 'var(--display)' }}
           >
             SUBrina,<br />
@@ -94,20 +89,28 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] text-left shadow-lg">
-            <span className="text-xs font-black uppercase tracking-wider text-[#ec4899] block mb-1">
-              Dancefloor Power
-            </span>
+          <a
+            href="#dancefloor-power"
+            className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] hover:border-[#ec4899] text-left shadow-lg transition-all group block cursor-pointer"
+          >
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs font-black uppercase tracking-wider text-[#ec4899] group-hover:text-[#FFB400] transition-colors">
+                Dancefloor Power
+              </span>
+              <span className="text-[10px] font-bold text-white/50 group-hover:text-white transition-colors">
+                Explore Zones →
+              </span>
+            </div>
             <div
-              className="text-3xl sm:text-4xl font-black text-[#fdf4ff] tracking-tight"
+              className="text-2xl sm:text-3xl font-black text-[#fdf4ff] tracking-tight leading-tight"
               style={{ fontFamily: 'var(--display)' }}
             >
-              Up to 400
+              200–250 Floor · 500–800 Area
             </div>
             <p className="text-xs text-[#fdf4ff]/70 mt-1 font-medium">
-              Versatile coverage for 400 people indoors and 150–200 outdoors with massive low end
+              200–250 core dancers outdoors (up to 350 indoors), and 500–800 total footprint across peripheral bar & lounge zones
             </p>
-          </div>
+          </a>
 
           <div className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] text-left shadow-lg">
             <span className="text-xs font-black uppercase tracking-wider text-[#38bdf8] block mb-1">

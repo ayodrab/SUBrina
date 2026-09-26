@@ -4,6 +4,7 @@ import litUpSawmodImg from '../assets/images/lit_up_sawmod.jpg';
 import subLightImg from '../assets/images/sub_light.jpeg';
 import subrinaMockupWideImg from '../assets/images/subrina_mockup_wide.jpeg';
 import { BuildGallery } from './BuildGallery';
+import { DancefloorPowerZones } from './DancefloorPowerZones';
 
 export const TheSoundSystem: React.FC = () => {
   const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
@@ -68,13 +69,15 @@ export const TheSoundSystem: React.FC = () => {
     {
       emoji: '👥',
       tag: 'Coverage',
-      title: '400 Indoors / 200 Outdoors',
-      designer: 'Dancefloor Capacity',
-      summary: 'Sized to fill intimate club spaces or outdoor festival fields with uncompromising presence.',
+      title: '200–250 Floor · 500–800 Area',
+      designer: 'Dancefloor Power & Acoustic Zones',
+      summary: '100–105 dBA core dancefloor impact with smooth 40m peripheral coverage scaling out to 500–800 people.',
       bg: 'bg-[#ec4899] text-white',
       tilt: 'tilt-right',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#FFB400]',
       badgeColor: 'bg-[#FFB400] text-[#1e0538]',
+      actionLink: '#dancefloor-power',
+      actionText: 'View Acoustic Zones ↓',
     },
     {
       emoji: '🚐',
@@ -203,13 +206,25 @@ export const TheSoundSystem: React.FC = () => {
                 <p className="text-xs sm:text-sm font-medium leading-relaxed opacity-90">
                   {c.summary}
                 </p>
+
+                {c.actionLink && (
+                  <a
+                    href={c.actionLink}
+                    className="inline-flex items-center gap-1.5 mt-3.5 text-xs font-black uppercase tracking-wider bg-[#1e0538] text-white hover:bg-[#FFB400] hover:text-[#1e0538] px-3.5 py-1.5 rounded-xl border border-current shadow-[2px_2px_0_#1e0538] transition-all w-fit cursor-pointer"
+                  >
+                    <span>{c.actionText || 'Learn More'}</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
         </div>
 
+        {/* Interactive Dancefloor Power & Acoustic Zones */}
+        <DancefloorPowerZones />
+
         {/* Unfurlable Deep Dive Box: How the Multiple Entry Horn Works */}
-        <div className="rounded-[1.6rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#f43f5e] overflow-hidden transition-all duration-300">
+        <div className="mt-14 rounded-[1.6rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#f43f5e] overflow-hidden transition-all duration-300">
           <button
             onClick={() => setIsDeepDiveOpen(!isDeepDiveOpen)}
             className="w-full p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left hover:bg-[#2e1065]/50 transition-colors cursor-pointer group"
