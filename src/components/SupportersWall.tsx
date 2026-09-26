@@ -27,10 +27,10 @@ export const SupportersWall: React.FC<SupportersWallProps> = ({ donors }) => {
           {donors.map((donor) => (
             <div
               key={donor.id}
-              className="p-6 sm:p-7 rounded-[1.6rem] bg-[#fde047] text-[#1e0538] border-4 border-[#1e0538] shadow-[8px_8px_0_#f43f5e] text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="p-6 sm:p-7 rounded-[1.6rem] bg-[#FFB400] text-[#1e0538] border-4 border-[#1e0538] shadow-[8px_8px_0_#f43f5e] text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4"
             >
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#1e0538] text-[#fde047] grid place-items-center text-3xl shrink-0 shadow-[2px_2px_0_#f43f5e]">
+                <div className="w-14 h-14 rounded-2xl bg-[#1e0538] text-[#FFB400] grid place-items-center text-3xl shrink-0 shadow-[2px_2px_0_#f43f5e]">
                   {donor.monsterAvatar || '💖'}
                 </div>
                 <div>

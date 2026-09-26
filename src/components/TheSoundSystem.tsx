@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ChevronDown, Volume2, Sparkles, Sliders, Zap, Check, Maximize2, X } from 'lucide-react';
 import litUpSawmodImg from '../assets/images/lit_up_sawmod.jpg';
 import subLightImg from '../assets/images/sub_light.jpeg';
+import subrinaMockupWideImg from '../assets/images/subrina_mockup_wide.jpeg';
+import { BuildGallery } from './BuildGallery';
 
 export const TheSoundSystem: React.FC = () => {
   const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
@@ -47,10 +49,10 @@ export const TheSoundSystem: React.FC = () => {
       modalTitle: '4 × 18" Reflex Subwoofers in Action',
       modalDescription: 'Precision tuned 18-inch bass reflex design providing deep physical authority and fast transient low-end response down to 30 Hz.',
       modalSpecs: '4 × 18" High-Excursion Reflex',
-      bg: 'bg-[#fde047] text-[#1e0538]',
+      bg: 'bg-[#FFB400] text-[#1e0538]',
       tilt: 'tilt-right',
       accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
-      badgeColor: 'bg-[#1e0538] text-[#fde047]',
+      badgeColor: 'bg-[#1e0538] text-[#FFB400]',
     },
     {
       emoji: '⚡',
@@ -71,8 +73,8 @@ export const TheSoundSystem: React.FC = () => {
       summary: 'Sized to fill intimate club spaces or outdoor festival fields with uncompromising presence.',
       bg: 'bg-[#ec4899] text-white',
       tilt: 'tilt-right',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#fde047]',
-      badgeColor: 'bg-[#fde047] text-[#1e0538]',
+      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#FFB400]',
+      badgeColor: 'bg-[#FFB400] text-[#1e0538]',
     },
     {
       emoji: '🚐',
@@ -101,10 +103,10 @@ export const TheSoundSystem: React.FC = () => {
   return (
     <section id="system" className="py-20 sm:py-28 px-4 sm:px-6 md:px-10 bg-[#19092b] text-[#fdf4ff]">
       <div className="max-w-7xl mx-auto">
-        {/* Section Heading */}
-        <div className="mb-14">
+        {/* Section Heading & Rig Showcase */}
+        <div className="mb-14 sm:mb-16">
           <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.05em] leading-[0.9]"
+            className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.05em] leading-[0.9] mb-8"
             style={{ fontFamily: 'var(--display)' }}
           >
             SUBrina,<br />
@@ -112,6 +114,30 @@ export const TheSoundSystem: React.FC = () => {
               candy to our ears.
             </em>
           </h2>
+
+          {/* Smooth, minimal presentation of what the system will look like — no card, minimal graphics */}
+          <div className="relative w-full max-w-5xl mx-auto my-8 sm:my-10">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/30">
+              <img
+                src={subrinaMockupWideImg}
+                alt="SUBrina Sound System Complete Rig — 2 SAWMOD Tops & 4 Horner 18-inch Subwoofers"
+                className="w-full h-auto object-contain max-h-[560px] mx-auto filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] hover:scale-[1.01] transition-transform duration-500 cursor-pointer"
+                onClick={() =>
+                  setActiveModalImage({
+                    src: subrinaMockupWideImg,
+                    title: 'SUBrina Complete Rig Concept',
+                    tag: 'The Full Sound System',
+                    description:
+                      'What SUBrina looks like in full flight: 2 × JW Audio SAWMOD multiple entry horn tops elevated above 4 × Horner Audio 18-inch reflex subwoofers.',
+                    specs: 'Complete 4-Way Rig',
+                  })
+                }
+              />
+            </div>
+            <p className="text-center text-xs sm:text-sm text-[#fdf4ff]/70 mt-3 font-medium">
+              The full SUBrina rig · 2 × SAWMOD Multiple Entry Horn tops & 4 × Horner Audio 18" reflex subs
+            </p>
+          </div>
         </div>
 
         {/* 6 Playful Animated Cards */}
@@ -162,7 +188,7 @@ export const TheSoundSystem: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex items-end p-2.5">
                       <div className="flex items-center justify-between w-full text-[11px] font-bold text-white">
-                        <span className="text-[#fde047] flex items-center gap-1.5">
+                        <span className="text-[#FFB400] flex items-center gap-1.5">
                           <span className="w-2 h-2 rounded-full bg-[#f43f5e] animate-pulse"></span>
                           {c.imageBadge || 'View Photo'}
                         </span>
@@ -190,18 +216,18 @@ export const TheSoundSystem: React.FC = () => {
             aria-expanded={isDeepDiveOpen}
           >
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
+              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
                 WHY IT SOUNDS DIFFERENT
               </span>
               <h3
-                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors leading-tight"
+                className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#FFB400] transition-colors leading-tight"
                 style={{ fontFamily: 'var(--display)' }}
               >
                 Why a Multiple Entry Horn? (The Acoustic Magic)
               </h3>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#fde047] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2 rounded-full border border-white/10 group-hover:border-[#fde047] transition-colors">
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#FFB400] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2 rounded-full border border-white/10 group-hover:border-[#FFB400] transition-colors">
               <span>{isDeepDiveOpen ? 'Collapse' : 'Deep Dive'}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-300 ${
@@ -233,11 +259,11 @@ export const TheSoundSystem: React.FC = () => {
                 <div className="p-6 rounded-2xl bg-[#19092b] border-2 border-[#2e1065] text-xs font-bold space-y-3">
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
                     <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Horn Architecture</span>
-                    <span className="text-[#fde047]">SAWMOD Multiple Entry Horn</span>
+                    <span className="text-[#FFB400]">SAWMOD Multiple Entry Horn</span>
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
                     <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Designer</span>
-                    <span className="text-[#fde047]">JW Audio</span>
+                    <span className="text-[#FFB400]">JW Audio</span>
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
                     <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Drivers Per Top</span>
@@ -257,6 +283,9 @@ export const TheSoundSystem: React.FC = () => {
           )}
         </div>
 
+        {/* SAWMOD and Horner Audio Build Gallery directly underneath why it sounds different */}
+        <BuildGallery />
+
         {/* Modal preview when clicking any photo card */}
         {activeModalImage && (
           <div
@@ -269,7 +298,7 @@ export const TheSoundSystem: React.FC = () => {
             >
               <div className="p-4 sm:p-5 border-b border-[#2e1065] flex items-center justify-between bg-[#19092b]">
                 <div className="flex items-center gap-3">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538]">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538]">
                     {activeModalImage.tag}
                   </span>
                   <h4 className="text-base sm:text-lg font-black uppercase text-white truncate max-w-xs sm:max-w-md">
@@ -296,7 +325,7 @@ export const TheSoundSystem: React.FC = () => {
               <div className="p-4 sm:p-5 bg-[#25123d] border-t border-[#2e1065] text-xs sm:text-sm text-[#fdf4ff]/85 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-medium">
                 <span>{activeModalImage.description}</span>
                 {activeModalImage.specs && (
-                  <span className="text-[#fde047] font-bold shrink-0">
+                  <span className="text-[#FFB400] font-bold shrink-0">
                     {activeModalImage.specs}
                   </span>
                 )}

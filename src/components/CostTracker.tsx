@@ -38,9 +38,9 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
       icon: '🎺',
     },
     subs: {
-      badge: 'text-[#fde047] bg-[#fde047]/15 border-[#fde047]/30',
-      border: 'hover:border-[#fde047]/60 focus-within:border-[#fde047]',
-      bar: 'bg-[#fde047]',
+      badge: 'text-[#FFB400] bg-[#FFB400]/15 border-[#FFB400]/30',
+      border: 'hover:border-[#FFB400]/60 focus-within:border-[#FFB400]',
+      bar: 'bg-[#FFB400]',
       icon: '🔊',
     },
     amplification: {
@@ -77,14 +77,14 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
         onClick={() => setIsBreakdownOpen(!isBreakdownOpen)}
         aria-expanded={isBreakdownOpen}
         aria-controls="budget-breakdown-panel"
-        className="w-full min-h-[52px] py-4 px-4 sm:px-6 rounded-2xl bg-[#19092b]/80 hover:bg-[#19092b] border-2 border-white/15 hover:border-[#fde047] flex items-center justify-between gap-4 text-left transition-all group cursor-pointer shadow-sm active:translate-y-0.5"
+        className="w-full min-h-[52px] py-4 px-4 sm:px-6 rounded-2xl bg-[#19092b]/80 hover:bg-[#19092b] border-2 border-white/15 hover:border-[#FFB400] flex items-center justify-between gap-4 text-left transition-all group cursor-pointer shadow-sm active:translate-y-0.5"
       >
         <div className="flex items-center gap-3 min-w-0">
-          <div className="w-8 h-8 rounded-xl bg-[#fde047] text-[#1e0538] flex items-center justify-center font-black text-sm shrink-0 shadow-[2px_2px_0_#1e0538] group-hover:rotate-6 transition-transform">
+          <div className="w-8 h-8 rounded-xl bg-[#FFB400] text-[#1e0538] flex items-center justify-center font-black text-sm shrink-0 shadow-[2px_2px_0_#1e0538] group-hover:rotate-6 transition-transform">
             €
           </div>
           <span
-            className="text-base sm:text-lg font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors block leading-tight truncate"
+            className="text-base sm:text-lg font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#FFB400] transition-colors block leading-tight truncate"
             style={{ fontFamily: 'var(--display)' }}
           >
             Where does all of this money go?
@@ -92,12 +92,12 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
         </div>
 
         <div className="flex items-center gap-2.5 shrink-0">
-          <span className="text-xs font-black uppercase tracking-wider text-[#fde047] hidden sm:inline">
+          <span className="text-xs font-black uppercase tracking-wider text-[#FFB400] hidden sm:inline">
             {isBreakdownOpen ? 'Hide Breakdown' : 'View Breakdown'}
           </span>
           <div
-            className={`w-8 h-8 rounded-full bg-[#25123d] border border-white/20 flex items-center justify-center text-[#fdf4ff] group-hover:border-[#fde047] group-hover:text-[#fde047] transition-all duration-300 ${
-              isBreakdownOpen ? 'rotate-180 bg-[#1e0538] text-[#fde047] border-[#fde047]' : ''
+            className={`w-8 h-8 rounded-full bg-[#25123d] border border-white/20 flex items-center justify-center text-[#fdf4ff] group-hover:border-[#FFB400] group-hover:text-[#FFB400] transition-all duration-300 ${
+              isBreakdownOpen ? 'rotate-180 bg-[#1e0538] text-[#FFB400] border-[#FFB400]' : ''
             }`}
           >
             <ChevronDown className="w-4 h-4 transition-transform duration-300" />
@@ -121,9 +121,9 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
               const isExpanded = !!expandedCategories[c.id];
               const pct = ((c.subtotal / summary.net_subtotal) * 100).toFixed(1);
               const accent = categoryAccents[c.id] || {
-                badge: 'text-[#fde047] bg-[#fde047]/15 border-[#fde047]/30',
-                border: 'hover:border-[#fde047]/60 focus-within:border-[#fde047]',
-                bar: 'bg-[#fde047]',
+                badge: 'text-[#FFB400] bg-[#FFB400]/15 border-[#FFB400]/30',
+                border: 'hover:border-[#FFB400]/60 focus-within:border-[#FFB400]',
+                bar: 'bg-[#FFB400]',
                 icon: '📦',
               };
 
@@ -139,7 +139,7 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
                     aria-expanded={isExpanded}
                     aria-controls={`category-panel-${c.id}`}
                     onClick={() => toggleCategory(c.id)}
-                    className="w-full min-h-[52px] py-3.5 px-4 sm:px-5 flex flex-col gap-2.5 text-left hover:bg-white/[0.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fde047] cursor-pointer transition-colors group"
+                    className="w-full min-h-[52px] py-3.5 px-4 sm:px-5 flex flex-col gap-2.5 text-left hover:bg-white/[0.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFB400] cursor-pointer transition-colors group"
                   >
                     {/* Main line: Name, Badges, Cost, Chevron */}
                     <div className="w-full flex items-center justify-between gap-3">
@@ -151,7 +151,7 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
                         <div className="min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span
-                              className="text-sm sm:text-base font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors truncate"
+                              className="text-sm sm:text-base font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#FFB400] transition-colors truncate"
                               style={{ fontFamily: 'var(--display)' }}
                             >
                               {c.name}
@@ -180,8 +180,8 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
                         </div>
 
                         <div
-                          className={`w-7 h-7 rounded-full bg-[#25123d] border border-white/15 flex items-center justify-center text-[#fdf4ff]/80 group-hover:text-[#fde047] group-hover:border-[#fde047] transition-all duration-300 ${
-                            isExpanded ? 'rotate-180 bg-[#1e0538] text-[#fde047] border-[#fde047]' : ''
+                          className={`w-7 h-7 rounded-full bg-[#25123d] border border-white/15 flex items-center justify-center text-[#fdf4ff]/80 group-hover:text-[#FFB400] group-hover:border-[#FFB400] transition-all duration-300 ${
+                            isExpanded ? 'rotate-180 bg-[#1e0538] text-[#FFB400] border-[#FFB400]' : ''
                           }`}
                         >
                           <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300" />
@@ -222,7 +222,7 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
                             >
                               {/* Item Name */}
                               <div className="flex items-center gap-2.5 min-w-0">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#fde047]/70 shrink-0" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#FFB400]/70 shrink-0" />
                                 <span className="text-[#fdf4ff]/90 font-medium leading-snug">
                                   {item.name}
                                 </span>
@@ -240,10 +240,10 @@ export const CostTracker: React.FC<CostTrackerProps> = ({
 
                         {/* Category Subtotal Footer inside child panel */}
                         <div className="mt-2.5 pt-2.5 border-t border-white/10 flex items-center justify-between px-3 text-xs font-bold text-[#fdf4ff]/70">
-                          <span className="uppercase tracking-wider text-[10px] font-black text-[#fde047]">
+                          <span className="uppercase tracking-wider text-[10px] font-black text-[#FFB400]">
                             {c.name} Subtotal:
                           </span>
-                          <span className="font-mono font-black text-sm text-[#fde047] tabular-nums">
+                          <span className="font-mono font-black text-sm text-[#FFB400] tabular-nums">
                             €{c.subtotal.toLocaleString()}
                           </span>
                         </div>

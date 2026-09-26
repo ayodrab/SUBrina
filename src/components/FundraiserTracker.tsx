@@ -30,7 +30,7 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
               style={{ fontFamily: 'var(--display)' }}
             >
               SUBrina needs<br />
-              <em className="text-[#fde047] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
+              <em className="text-[#FFB400] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
                 €{goal.toLocaleString()} to come alive.
               </em>
             </h2>
@@ -45,7 +45,7 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
           {/* Top Numbers Row */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-8 border-b border-white/15 items-baseline">
             <div>
-              <span className="text-xs font-black uppercase tracking-wider text-[#fde047] block mb-1">
+              <span className="text-xs font-black uppercase tracking-wider text-[#FFB400] block mb-1">
                 Amount raised so far
               </span>
               <div
@@ -55,7 +55,7 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
                 €{totalRaised.toLocaleString()}
               </div>
               <span className="text-xs font-bold text-[#fdf4ff]/70 mt-1 block">
-                First backer support from Herzberg! 💖
+                First backer support from Julia P! 💖
               </span>
             </div>
 
@@ -94,7 +94,7 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
           <div className="my-8">
             <div className="relative w-full h-8 bg-[#19092b] rounded-full border-2 border-[#1e0538] overflow-hidden p-1 shadow-inner">
               <div
-                className="h-full bg-gradient-to-r from-[#f43f5e] via-[#ec4899] to-[#fde047] rounded-full border border-[#1e0538] transition-all duration-700 ease-out shadow-[0_0_12px_rgba(244,63,94,0.4)]"
+                className="h-full bg-gradient-to-r from-[#f43f5e] via-[#ec4899] to-[#FFB400] rounded-full border border-[#1e0538] transition-all duration-700 ease-out shadow-[0_0_12px_rgba(244,63,94,0.4)]"
                 style={{ width: `${percent}%` }}
               />
             </div>
@@ -110,12 +110,12 @@ export const FundraiserTracker: React.FC<FundraiserTrackerProps> = ({
           {/* Action Row with Suggested Amounts & Labels */}
           <div className="pt-6 border-t border-white/15 flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="text-center lg:text-left">
-              <span className="text-xs font-black uppercase tracking-wider text-[#fde047] block">
+              <span className="text-xs font-black uppercase tracking-wider text-[#FFB400] block">
                 Suggested contribution
               </span>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#19092b] border border-white/15 text-xs text-[#fdf4ff]/90 font-bold">
-                  <strong className="text-[#fde047]">€15</strong> Kiss on the Cheek
+                  <strong className="text-[#FFB400]">€15</strong> Kiss on the Cheek
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#19092b] border border-white/15 text-xs text-[#fdf4ff]/90 font-bold">
                   <strong className="text-[#f43f5e]">€30</strong> Slow Tight Dance

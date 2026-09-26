@@ -44,7 +44,7 @@ export const SoundBrewingProcess: React.FC = () => {
         'The brains of SUBrina. Our digital signal processor (DSP) runs precision FIR filters and delay compensation so every frequency band hits the dancefloor simultaneously. Intelligent RMS and peak limiters protect the hardware from enthusiastic DJs without suffocating dynamics.',
       pixelSpecs: ['64-Bit DSP Engine', 'Sub-ms Phase Alignment', 'Dynamic Thermal Limits', 'Neutrik speakON Looms'],
       visualType: 'dsp',
-      color: 'bg-[#fde047] text-[#1e0538]',
+      color: 'bg-[#FFB400] text-[#1e0538]',
       shadowColor: '#1e0538',
     },
     {
@@ -59,7 +59,7 @@ export const SoundBrewingProcess: React.FC = () => {
       pixelSpecs: ['4 × 18" Heavy Drivers', 'Tuned down to 30 Hz', 'No Mud / Fast Transients', 'Up to 400 Dancers'],
       visualType: 'subs',
       color: 'bg-[#ec4899] text-white',
-      shadowColor: '#fde047',
+      shadowColor: '#FFB400',
     },
   ];
 
@@ -161,13 +161,13 @@ export const SoundBrewingProcess: React.FC = () => {
             {/* Right Interactive Visual Simulation */}
             <div className="rounded-2xl bg-[#19092b] text-[#fdf4ff] border-2 border-[#1e0538] p-6 sm:p-8 flex flex-col justify-between aspect-[4/3] relative overflow-hidden shadow-inner">
               {/* Decorative Matrix Grid */}
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fde047_1px,transparent_1px)] [background-size:14px_14px]" />
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#FFB400_1px,transparent_1px)] [background-size:14px_14px]" />
 
               {/* Status Header */}
               <div className="relative z-10 flex items-center justify-between border-b border-white/15 pb-3">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#34d399] animate-pulse" />
-                  <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#fde047]">
+                  <span className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#FFB400]">
                     SYS.RECIPE // STAGE 0{currentStep.id}
                   </span>
                 </div>
@@ -183,7 +183,7 @@ export const SoundBrewingProcess: React.FC = () => {
                     <div className="text-6xl sm:text-7xl mb-2 animate-bounce">
                       🎺
                     </div>
-                    <div className="text-sm font-black uppercase text-[#fde047] tracking-wider">
+                    <div className="text-sm font-black uppercase text-[#FFB400] tracking-wider">
                       5 Drivers → 1 Horn Throat
                     </div>
                     <div className="text-xs text-white/70 font-mono mt-1">
@@ -224,7 +224,7 @@ export const SoundBrewingProcess: React.FC = () => {
               {/* Live Waveform / Graphic Bar */}
               <div className="relative z-10 pt-3 border-t border-white/15 flex items-center justify-between text-[10px] font-mono text-white/60">
                 <span>ACOUSTIC PURITY: 99.8%</span>
-                <span className="text-[#fde047]">READY FOR DANCEFLOORS</span>
+                <span className="text-[#FFB400]">READY FOR DANCEFLOORS</span>
               </div>
             </div>
           </div>

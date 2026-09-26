@@ -61,7 +61,7 @@ const POLITE_MESSAGES = [
   'Pardon me, friend! ⚡',
 ];
 
-const BUBBLE_COLORS = ['#fde047', '#ec4899', '#38bdf8', '#a7f3d0', '#fbcfe8'];
+const BUBBLE_COLORS = ['#FFB400', '#ec4899', '#38bdf8', '#a7f3d0', '#fbcfe8'];
 
 export const DancefloorSimulator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -108,7 +108,7 @@ export const DancefloorSimulator: React.FC = () => {
   // Initialize dancers with wandering positions & much slower gentle groove
   const initDancers = (width: number, height: number) => {
     const avatars = ['👾', '💖', '⚡', '✨', '🎀', '🎧', '🐾', '🦄', '💃', '🕺', '🍄', '🐱', '🦋'];
-    const colors = ['#f43f5e', '#ec4899', '#fde047', '#38bdf8', '#c084fc', '#34d399'];
+    const colors = ['#f43f5e', '#ec4899', '#FFB400', '#38bdf8', '#c084fc', '#34d399'];
     const list: Dancer[] = [];
 
     const floorTop = height * 0.28;
@@ -191,7 +191,7 @@ export const DancefloorSimulator: React.FC = () => {
       y: hornY,
       radius: 8,
       maxRadius: height * 0.88,
-      color: '#fde047',
+      color: '#FFB400',
       type: 'horn',
       speed: 5.4,
       lineWidth: 1.2,
@@ -204,7 +204,7 @@ export const DancefloorSimulator: React.FC = () => {
       y: hornY,
       radius: 8,
       maxRadius: height * 0.88,
-      color: '#fde047',
+      color: '#FFB400',
       type: 'horn',
       speed: 5.4,
       lineWidth: 1.2,
@@ -368,7 +368,7 @@ export const DancefloorSimulator: React.FC = () => {
           particleCount: 100,
           spread: 80,
           origin: { y: 0.5 },
-          colors: ['#ec4899', '#fde047', '#38bdf8', '#c084fc', '#4ade80']
+          colors: ['#ec4899', '#FFB400', '#38bdf8', '#c084fc', '#4ade80']
         });
       }
 
@@ -404,17 +404,17 @@ export const DancefloorSimulator: React.FC = () => {
         130
       );
       gradient.addColorStop(0, 'rgba(236, 72, 153, 0.32)');
-      gradient.addColorStop(0.6, 'rgba(253, 224, 71, 0.12)');
+      gradient.addColorStop(0.6, 'rgba(255, 180, 0, 0.12)');
       gradient.addColorStop(1, 'rgba(236, 72, 153, 0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(width * 0.12, sweetSpotY - 14, width * 0.76, 68);
 
-      ctx.strokeStyle = 'rgba(253, 224, 71, 0.45)';
+      ctx.strokeStyle = 'rgba(255, 180, 0, 0.45)';
       ctx.lineWidth = 1.5;
       ctx.setLineDash([4, 4]);
       ctx.strokeRect(width * 0.18, sweetSpotY - 10, width * 0.64, 48);
       ctx.setLineDash([]);
-      ctx.fillStyle = '#fde047';
+      ctx.fillStyle = '#FFB400';
       ctx.font = '900 10px monospace';
       ctx.textAlign = 'center';
       ctx.fillText('⚡ FRONT ROW BASS HUG ZONE (GOAL) ⚡', width / 2, sweetSpotY + 18);
@@ -429,7 +429,7 @@ export const DancefloorSimulator: React.FC = () => {
       ctx.fill();
       ctx.stroke();
 
-      ctx.fillStyle = '#fde047';
+      ctx.fillStyle = '#FFB400';
       ctx.font = '900 12px ui-monospace, monospace';
       ctx.textAlign = 'center';
       ctx.fillText('DJ BOOTH // BURCU & AYO B2B', width / 2, boothY + 22);
@@ -446,7 +446,7 @@ export const DancefloorSimulator: React.FC = () => {
 
       // Left Horn
       ctx.fillStyle = '#ec4899';
-      ctx.strokeStyle = '#fde047';
+      ctx.strokeStyle = '#FFB400';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.roundRect(leftHornX - 22, hornY - 10, 44, 28, 6);
@@ -458,7 +458,7 @@ export const DancefloorSimulator: React.FC = () => {
 
       // Right Horn
       ctx.fillStyle = '#ec4899';
-      ctx.strokeStyle = '#fde047';
+      ctx.strokeStyle = '#FFB400';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.roundRect(rightHornX - 22, hornY - 10, 44, 28, 6);
@@ -767,7 +767,7 @@ export const DancefloorSimulator: React.FC = () => {
       ctx.fillText(player.avatar, 0, 0);
 
       // "YOU" Label
-      ctx.fillStyle = '#fde047';
+      ctx.fillStyle = '#FFB400';
       ctx.font = '900 10px monospace';
       ctx.fillText('✨ YOU ✨', 0, -23);
 
@@ -859,7 +859,7 @@ export const DancefloorSimulator: React.FC = () => {
               style={{ fontFamily: 'var(--display)' }}
             >
               Weave The Dancefloor<br />
-              <em className="text-[#fde047] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
+              <em className="text-[#FFB400] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
                 Push & Bounce to the Front.
               </em>
             </h2>
@@ -889,7 +889,7 @@ export const DancefloorSimulator: React.FC = () => {
               <div className="px-3 py-1.5 rounded-full bg-[#19092b] border border-white/10 flex items-center gap-1.5">
                 <Heart className="w-3.5 h-3.5 text-[#ec4899] fill-[#ec4899]" />
                 <span className="text-[#fdf4ff]/80">Polite Nudges:</span>
-                <span className="text-[#fde047] font-bold">{gentlePushes}</span>
+                <span className="text-[#FFB400] font-bold">{gentlePushes}</span>
               </div>
 
               <div className="px-3 py-1.5 rounded-full bg-[#19092b] border border-white/10 flex items-center gap-1.5">
@@ -928,7 +928,7 @@ export const DancefloorSimulator: React.FC = () => {
 
             {/* Victory Banner Overlay */}
             {reachedFront && (
-              <div className="absolute top-24 left-1/2 -translate-x-1/2 p-5 sm:p-6 rounded-2xl bg-[#fde047] text-[#1e0538] border-4 border-[#1e0538] shadow-[8px_8px_0_#f43f5e] text-center z-20 max-w-sm w-[90%] animate-bounce">
+              <div className="absolute top-24 left-1/2 -translate-x-1/2 p-5 sm:p-6 rounded-2xl bg-[#FFB400] text-[#1e0538] border-4 border-[#1e0538] shadow-[8px_8px_0_#f43f5e] text-center z-20 max-w-sm w-[90%] animate-bounce">
                 <div className="text-3xl mb-1">🎉 🔊 💖</div>
                 <div
                   className="text-xl sm:text-2xl font-black uppercase tracking-tight"
@@ -953,7 +953,7 @@ export const DancefloorSimulator: React.FC = () => {
 
             {/* Controls Helper Badge */}
             <div className="absolute bottom-3 left-3 bg-[#19092b]/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-[11px] font-mono text-[#fdf4ff] flex items-center gap-2 pointer-events-none">
-              <span className="text-[#fde047] font-bold">👆 Controls:</span>
+              <span className="text-[#FFB400] font-bold">👆 Controls:</span>
               <span>Touch & Drag or WASD / Arrow Keys</span>
             </div>
 
@@ -965,7 +965,7 @@ export const DancefloorSimulator: React.FC = () => {
           {/* Acoustic Spec Footer */}
           <div className="mt-5 pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-medium text-[#fdf4ff]/80">
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-[#fde047] inline-block shrink-0" />
+              <span className="w-3 h-3 rounded-full bg-[#FFB400] inline-block shrink-0" />
               <span>
                 <strong>Laser Point Horns:</strong> SAWMOD Multiple Entry Horns pulsing high frequencies.
               </span>

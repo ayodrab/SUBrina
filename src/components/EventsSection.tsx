@@ -27,7 +27,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ events }) => {
               key={ev.id}
               className={`p-7 sm:p-9 rounded-[1.8rem] border-4 border-[#1e0538] flex flex-col justify-between transition-all duration-300 ${
                 idx === 0
-                  ? 'bg-[#fde047] text-[#1e0538] shadow-[10px_10px_0_#f43f5e] tilt-left'
+                  ? 'bg-[#FFB400] text-[#1e0538] shadow-[10px_10px_0_#f43f5e] tilt-left'
                   : 'bg-[#fdf4ff] text-[#1e0538] shadow-[10px_10px_0_#38bdf8] tilt-right'
               } hover:-translate-y-2 hover:shadow-[14px_14px_0_#ec4899]`}
             >
@@ -35,7 +35,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({ events }) => {
                 {/* Date & Time Header Pill */}
                 <div className="mb-4">
                   <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-[#1e0538] text-white">
-                    <Calendar className="w-3.5 h-3.5 text-[#fde047]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#FFB400]" />
                     {ev.formattedDate}
                   </span>
                 </div>

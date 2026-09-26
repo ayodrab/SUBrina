@@ -13,22 +13,21 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
 
   return (
     <section className="relative overflow-hidden bg-[#19092b] text-[#fdf4ff] pt-12 sm:pt-20 pb-20 sm:pb-28">
-      {/* Background Hero Image with Gradient Overlays for Maximum Readability */}
+      {/* Background Hero Image with Directional Gradient for Readability */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-start sm:items-center justify-center lg:justify-end">
         <div className="relative w-full lg:w-[88%] xl:w-[82%] 2xl:w-[78%] h-full flex items-start sm:items-center justify-center lg:justify-end pt-8 sm:pt-0">
           <img
             src={subrinaMockupWide}
-            alt=""
+            alt="SUBrina Sound System Render"
             role="presentation"
-            className="w-[88%] sm:w-full h-auto max-h-[72%] sm:max-h-full object-contain object-top sm:object-right opacity-45 sm:opacity-65 lg:opacity-75 filter contrast-[1.08] scale-100 sm:scale-105 lg:scale-115 xl:scale-120 drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] transition-all duration-300"
+            className="w-[92%] sm:w-full h-auto max-h-[78%] sm:max-h-full object-contain object-top sm:object-right opacity-70 sm:opacity-85 lg:opacity-95 filter contrast-[1.12] brightness-[1.05] scale-100 sm:scale-105 lg:scale-115 xl:scale-120 drop-shadow-[0_20px_60px_rgba(0,0,0,0.95)] transition-all duration-300"
             loading="eager"
           />
         </div>
 
-        {/* Darkening & directional gradient layers: deep on left/text side, smoothly revealing system on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#19092b] via-[#19092b]/85 sm:via-[#19092b]/60 to-[#19092b]/25 sm:to-[#19092b]/15" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#19092b] via-transparent to-[#19092b]/70 sm:to-[#19092b]/50" />
-        <div className="absolute inset-0 bg-[#19092b]/15 sm:bg-[#19092b]/10" />
+        {/* Directional gradient: protects text contrast on left, smoothly lets the rig shine clearly on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#19092b] via-[#19092b]/80 sm:via-[#19092b]/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#19092b] via-transparent to-[#19092b]/40 sm:to-transparent" />
       </div>
 
       {/* Ambient Color Glows */}
@@ -38,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 z-10">
         {/* Hero Content */}
         <div className="max-w-3xl my-6 sm:my-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538] border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] mb-5 select-none">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538] border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] mb-5 select-none">
             <span>👾</span>
             <span>The Bass Monster</span>
           </div>
@@ -81,7 +80,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
         {/* 3-Column Fast Facts Strip */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 sm:pt-14 mt-8 border-t-2 border-[#2e1065]/80 backdrop-blur-xs">
           <div className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] text-left shadow-lg">
-            <span className="text-xs font-black uppercase tracking-wider text-[#fde047] block mb-1">
+            <span className="text-xs font-black uppercase tracking-wider text-[#FFB400] block mb-1">
               One Main Target
             </span>
             <div
@@ -128,7 +127,7 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
       </div>
 
       {/* Running Marquee Ticker */}
-      <div className="mt-14 -rotate-1 scale-105 bg-[#fde047] text-[#19092b] border-y-3 border-[#1e0538] shadow-[0_6px_0_#ec4899]">
+      <div className="mt-14 -rotate-1 scale-105 bg-[#FFB400] text-[#19092b] border-y-3 border-[#1e0538] shadow-[0_6px_0_#ec4899]">
         <div className="ticker-tape">
           <div className="ticker-track">
             <span>✳ SUBRINA — THE BASS MONSTER</span>

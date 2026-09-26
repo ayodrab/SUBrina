@@ -48,7 +48,7 @@ export const SoundHireAndFaq: React.FC = () => {
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-black uppercase text-sm sm:text-base text-[#fdf4ff] hover:text-[#fde047] transition-colors"
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-black uppercase text-sm sm:text-base text-[#fdf4ff] hover:text-[#FFB400] transition-colors"
                   >
                     <span>{faq.q}</span>
                     <ChevronDown
@@ -68,7 +68,7 @@ export const SoundHireAndFaq: React.FC = () => {
           </div>
 
           {/* Telegram Direct Connection Card */}
-          <div className="p-8 sm:p-9 rounded-[2rem] bg-[#25123d] border-4 border-[#1e0538] shadow-[10px_12px_0_#fde047] sticky top-28">
+          <div className="p-8 sm:p-9 rounded-[2rem] bg-[#25123d] border-4 border-[#1e0538] shadow-[10px_12px_0_#FFB400] sticky top-28">
             <div className="w-12 h-12 rounded-2xl bg-[#0088cc] text-white grid place-items-center mb-6 shadow-[3px_3px_0_#1e0538]">
               <MessageCircle className="w-6 h-6" />
             </div>

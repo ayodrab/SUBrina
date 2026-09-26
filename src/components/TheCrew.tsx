@@ -37,8 +37,8 @@ export const TheCrew: React.FC = () => {
 
           {/* Quote Block */}
           <div className="self-center">
-            <blockquote className="p-8 sm:p-10 rounded-[1.8rem] bg-[#25123d] text-[#fdf4ff] border-2 border-[#2e1065] shadow-[10px_10px_0_#fde047]">
-              <p className="text-xl sm:text-2xl font-serif italic mb-4 leading-snug text-[#fde047]">
+            <blockquote className="p-8 sm:p-10 rounded-[1.8rem] bg-[#25123d] text-[#fdf4ff] border-2 border-[#2e1065] shadow-[10px_10px_0_#FFB400]">
+              <p className="text-xl sm:text-2xl font-serif italic mb-4 leading-snug text-[#FFB400]">
                 “We just want to take it into our own hands and make something better for the community. Sound that embraces you with physical bass and zero ear fatigue.”
               </p>
               <cite className="text-xs font-black uppercase tracking-widest text-[#fdf4ff]/70 not-italic block">
@@ -54,7 +54,7 @@ export const TheCrew: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <span className="pixel-badge pixel-badge-yellow">POKÉMON TRAINER EDITION</span>
-                <span className="text-xs text-[#fde047] font-black uppercase tracking-wider">Holographic Monster Cards</span>
+                <span className="text-xs text-[#FFB400] font-black uppercase tracking-wider">Holographic Monster Cards</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black uppercase text-[#fdf4ff] mt-1" style={{ fontFamily: 'var(--display)' }}>
                 Click a card to bring to front
@@ -68,7 +68,7 @@ export const TheCrew: React.FC = () => {
                 onClick={() => setActiveCard('burcu')}
                 className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all ${
                   activeCard === 'burcu'
-                    ? 'bg-[#ec4899] text-white border-[#fde047] shadow-[3px_3px_0_#1e0538]'
+                    ? 'bg-[#ec4899] text-white border-[#FFB400] shadow-[3px_3px_0_#1e0538]'
                     : 'bg-[#25123d] text-white/70 border-white/20 hover:border-[#ec4899]'
                 }`}
               >
@@ -79,8 +79,8 @@ export const TheCrew: React.FC = () => {
                 onClick={() => setActiveCard('ayo')}
                 className={`px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider border-2 transition-all ${
                   activeCard === 'ayo'
-                    ? 'bg-[#fde047] text-[#1e0538] border-[#1e0538] shadow-[3px_3px_0_#f43f5e]'
-                    : 'bg-[#25123d] text-white/70 border-white/20 hover:border-[#fde047]'
+                    ? 'bg-[#FFB400] text-[#1e0538] border-[#1e0538] shadow-[3px_3px_0_#f43f5e]'
+                    : 'bg-[#25123d] text-white/70 border-white/20 hover:border-[#FFB400]'
                 }`}
               >
                 ⚡ Card 02: Ayo
@@ -93,9 +93,9 @@ export const TheCrew: React.FC = () => {
             {/* CARD 1: BURCU */}
             <div
               onClick={() => setActiveCard('burcu')}
-              className={`p-4 sm:p-5 rounded-[2rem] border-4 border-[#fde047] bg-gradient-to-b from-[#fde047] via-[#ec4899] to-[#25123d] text-[#1e0538] transition-all duration-500 cursor-pointer ${
+              className={`p-4 sm:p-5 rounded-[2rem] border-4 border-[#FFB400] bg-gradient-to-b from-[#FFB400] via-[#ec4899] to-[#25123d] text-[#1e0538] transition-all duration-500 cursor-pointer ${
                 activeCard === 'burcu'
-                  ? 'scale-105 shadow-[14px_16px_0_#ec4899] ring-4 ring-[#fde047] z-20'
+                  ? 'scale-105 shadow-[14px_16px_0_#ec4899] ring-4 ring-[#FFB400] z-20'
                   : 'scale-95 opacity-80 hover:opacity-100 hover:scale-100 z-10 shadow-[6px_6px_0_#1e0538]'
               }`}
             >
@@ -129,7 +129,7 @@ export const TheCrew: React.FC = () => {
                 </div>
 
                 {/* Sub-info bar */}
-                <div className="bg-[#fde047] text-[10px] font-black uppercase text-center py-1 rounded-md border border-[#1e0538] mb-3">
+                <div className="bg-[#FFB400] text-[10px] font-black uppercase text-center py-1 rounded-md border border-[#1e0538] mb-3">
                   Species: Nightlife Curatrix · Agentur für Nightlife · Dancer & Performer
                 </div>
 
@@ -178,7 +178,7 @@ export const TheCrew: React.FC = () => {
               onClick={() => setActiveCard('ayo')}
               className={`p-4 sm:p-5 rounded-[2rem] border-4 border-[#38bdf8] bg-gradient-to-b from-[#38bdf8] via-[#a855f7] to-[#19092b] text-[#1e0538] transition-all duration-500 cursor-pointer ${
                 activeCard === 'ayo'
-                  ? 'scale-105 shadow-[14px_16px_0_#fde047] ring-4 ring-[#38bdf8] z-20'
+                  ? 'scale-105 shadow-[14px_16px_0_#FFB400] ring-4 ring-[#38bdf8] z-20'
                   : 'scale-95 opacity-80 hover:opacity-100 hover:scale-100 z-10 shadow-[6px_6px_0_#1e0538]'
               }`}
             >

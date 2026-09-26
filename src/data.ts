@@ -192,10 +192,10 @@ export const DONATION_TIERS: DonationTier[] = [
 export const INITIAL_DONORS: Donor[] = [
   {
     id: 'donor-herzberg',
-    name: 'Herzberg',
+    name: 'Julia P',
     amount: 1250,
     date: 'First Backer',
-    message: 'So excited to see SUBrina roar to life! Big support for Burcu, Ayo, and the community sound! 💖⚡',
+    message: 'To make the  HRZBRN aka Erwachsenenwochenende sound even more amazing, we chip in for SUBrina',
     isArtist: false,
     isAnonymous: false,
     tierName: 'Guestlist: You + 5 Friends',

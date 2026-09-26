@@ -14,12 +14,12 @@ export const Manifesto: React.FC = () => {
             aria-expanded={isOpen}
           >
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#fde047] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
+              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
                 OUR ORIGIN STORY
               </span>
               <div>
                 <h3
-                  className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#fde047] transition-colors leading-tight"
+                  className="text-xl sm:text-2xl lg:text-3xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#FFB400] transition-colors leading-tight"
                   style={{ fontFamily: 'var(--display)' }}
                 >
                   Our Origin Story
@@ -30,7 +30,7 @@ export const Manifesto: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#fde047] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2.5 rounded-full border border-white/10 group-hover:border-[#fde047] transition-colors">
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#FFB400] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2.5 rounded-full border border-white/10 group-hover:border-[#FFB400] transition-colors">
               <span>{isOpen ? 'Collapse' : 'Story'}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-300 ${
@@ -43,7 +43,7 @@ export const Manifesto: React.FC = () => {
           {isOpen && (
             <div className="px-6 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-[#2e1065] animate-in fade-in slide-in-from-top-2 duration-200">
               <div className="max-w-3xl space-y-6 text-base sm:text-lg text-[#fdf4ff]/90 leading-relaxed font-normal">
-                <p className="text-xl sm:text-2xl font-bold text-[#fde047] leading-snug">
+                <p className="text-xl sm:text-2xl font-bold text-[#FFB400] leading-snug">
                   We’ve been putting on events with our friends for a long time, and honestly: often the sound systems are just shit.
                 </p>
 

@@ -20,12 +20,12 @@ export const SubrinaLogo: React.FC<SubrinaLogoProps> = ({ className = '', showSu
           <linearGradient id="hornGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#fef9c3" />
             <stop offset="50%" stopColor="#fef08a" />
-            <stop offset="100%" stopColor="#eab308" />
+            <stop offset="100%" stopColor="#FFB400" />
           </linearGradient>
           <linearGradient id="hornGradRight" x1="100%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#fef9c3" />
             <stop offset="50%" stopColor="#fef08a" />
-            <stop offset="100%" stopColor="#eab308" />
+            <stop offset="100%" stopColor="#FFB400" />
           </linearGradient>
 
           <linearGradient id="furGradPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -46,13 +46,13 @@ export const SubrinaLogo: React.FC<SubrinaLogoProps> = ({ className = '', showSu
           <linearGradient id="fangGrad" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#ffffff" />
             <stop offset="80%" stopColor="#fef08a" />
-            <stop offset="100%" stopColor="#fde047" />
+            <stop offset="100%" stopColor="#FFB400" />
           </linearGradient>
 
           {/* Claw gradient */}
           <linearGradient id="clawGrad" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#fef9c3" />
-            <stop offset="100%" stopColor="#eab308" />
+            <stop offset="100%" stopColor="#FFB400" />
           </linearGradient>
         </defs>
 
