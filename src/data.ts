@@ -1,30 +1,36 @@
 import { Donor, BudgetItem, EventItem, CrewMember, DonationTier, FundraisingMilestone, BudgetData } from './types';
 
 export const PAYPAL_POOL_URL = 'https://www.paypal.com/pool/9sXuCfXhbW?sr=ancr';
+export const TELEGRAM_AYO_URL = 'https://t.me/ayodrab';
 
 export const INITIAL_FUNDRAISING_GOAL = 11385;
+export const CURRENT_TOTAL_RAISED = 1250;
+
+// Optional manually maintained date when the total was verified.
+// Set to null to omit. When provided, shown gently alongside the progress.
+export const FUNDRAISING_LAST_UPDATED: string | null = null;
 
 export const FLAGSHIP_NEO_BUDGET: BudgetData = {
-  project: "SUBrina Soundsystem (Flagship Neo Build)",
+  project: "SUBrina Soundsystem Build",
   location: "Germany",
   currency: "EUR",
   buffer_percentage: 10,
   summary: {
-    net_subtotal: 10350,
-    contingency_buffer: 1035,
+    net_subtotal: 10350, // Equipment & materials subtotal
+    contingency_buffer: 1035, // 10% contingency
     grand_total: 11385
   },
   categories: [
     {
       id: "tops",
-      name: "SAWMOD Tops (2 Cabinets)",
+      name: "SAWMOD Horn Tops (2 Cabinets)",
       subtotal: 2090,
       items: [
         { name: "CNC 12 mm Baltic Birch Flatpacks", cost: 400 },
         { name: "3D-Printed Waveguide & Flange Set (PET-CF)", cost: 170 },
-        { name: "4 x B&C 10NDL88 LF Drivers (10\")", cost: 780 },
-        { name: "4 x B&C 4NDF34 MF Drivers (4\")", cost: 320 },
-        { name: "2 x B&C DE360 / DH450H HF Drivers (1\")", cost: 260 },
+        { name: "4 × B&C 10NDL88 LF Drivers (10\")", cost: 780 },
+        { name: "4 × B&C 4NDF34 MF Drivers (4\")", cost: 320 },
+        { name: "2 × B&C DE360 / DH450H HF Drivers (1\")", cost: 260 },
         { name: "Hardware, Neutrik NL8 Sockets, Grilles & Foam", cost: 160 }
       ]
     },
@@ -34,7 +40,7 @@ export const FLAGSHIP_NEO_BUDGET: BudgetData = {
       subtotal: 3600,
       items: [
         { name: "CNC 18 mm Baltic Birch Flatpacks (Braced)", cost: 900 },
-        { name: "4 x B&C 18DS115-8 Neodymium Drivers (18\")", cost: 2220 },
+        { name: "4 × B&C 18DS115-8 Neodymium Drivers (18\")", cost: 2220 },
         { name: "M20 Pole Sockets, Bar Handles & Feet", cost: 260 },
         { name: "Powder-Coated Steel Grilles & Acoustic Foam", cost: 220 }
       ]
@@ -44,19 +50,19 @@ export const FLAGSHIP_NEO_BUDGET: BudgetData = {
       name: "Amplification, DSP & Rack",
       subtotal: 2200,
       items: [
-        { name: "Sub Amp: Sinbosen FP14000 / D2-3000 Class-D", cost: 830 },
-        { name: "Top Amp: Sinbosen FP10000Q / D4-2000 Class-D", cost: 750 },
-        { name: "Standalone 4-in / 8-out DSP Unit", cost: 350 },
-        { name: "Shock-Mount Flight Case (8U/10U on Wheels)", cost: 270 }
+        { name: "Subwoofer Amplifier: FP14000 / Class-D Power", cost: 830 },
+        { name: "Tops Amplifier: FP10000Q / 4-Channel Class-D", cost: 750 },
+        { name: "Standalone 4-in / 8-out Digital Signal Processor (DSP)", cost: 350 },
+        { name: "Shock-Mount Wheeled Flight Case (8U/10U Rack)", cost: 270 }
       ]
     },
     {
       id: "cabling",
-      name: "Cabling, Connectors & Patch Bay",
+      name: "Cabling, Connectors & Power Distribution",
       subtotal: 700,
       items: [
-        { name: "2 x 15 m 8x2.5 mm² Sommer Elephant NL8 Mains", cost: 220 },
-        { name: "NL4 Sub Cables & Jumpers (4x4 mm²)", cost: 150 },
+        { name: "2 × 15 m 8×2.5 mm² Sommer Elephant NL8 Speaker Mains", cost: 220 },
+        { name: "NL4 Sub Cables & Jumpers (4×4 mm²)", cost: 150 },
         { name: "Neutrik Connectors & XLR Patch Lines", cost: 110 },
         { name: "Custom 1U Pre-Wired Rack Patch Panel", cost: 120 },
         { name: "16 A CEE / Schuko Power Distribution Block", cost: 100 }
@@ -64,127 +70,128 @@ export const FLAGSHIP_NEO_BUDGET: BudgetData = {
     },
     {
       id: "finish",
-      name: "Chrome Epoxy Finish & Hardware",
+      name: "Protective Metallic Finish & Hardware",
       subtotal: 800,
       items: [
         { name: "Wood Sealer & 2K Black Basecoat", cost: 130 },
-        { name: "2K Ultra-Clear Epoxy Resin & Chrome Pigment", cost: 240 },
+        { name: "2K Ultra-Clear Epoxy Resin & Chrome Pigment (Custom Finish)", cost: 240 },
         { name: "2K PU Protective Clear Topcoat", cost: 110 },
-        { name: "Consumables, Abrasives & Fasteners", cost: 185 },
-        { name: "2 x K&M 21339 M20 Distance Poles", cost: 135 }
+        { name: "Workshop Consumables, Abrasives & Fasteners", cost: 185 },
+        { name: "2 × K&M 21339 M20 Distance Speaker Poles", cost: 135 }
       ]
     },
     {
       id: "covers",
-      name: "Fluffy Plush-Lined Slipcovers (6 Units)",
+      name: "Padded Transport Slipcovers (6 Units)",
       subtotal: 960,
       items: [
-        { name: "4 x 18\" Subcovers (EPE Foam + Faux-Fur Lining)", cost: 540 },
-        { name: "2 x SAWMOD Topcovers (Trapezoidal + Faux-Fur)", cost: 320 },
-        { name: "Heavy-Duty Zippers, Cinch Straps & Accents", cost: 100 }
+        { name: "4 × 18\" Subwoofer Covers (EPE Foam + Faux-Fur Lining)", cost: 540 },
+        { name: "2 × SAWMOD Topcovers (Padded Trapezoidal)", cost: 320 },
+        { name: "Heavy-Duty Zippers, Cinch Straps & Hardware", cost: 100 }
       ]
     }
   ]
 };
 
+// Staged build order: Tops first, then Amplification & DSP, then our own Subwoofers
 export const FUNDRAISING_MILESTONES: FundraisingMilestone[] = [
   {
     id: 'milestone-1',
-    targetAmount: 2500,
-    title: '2 SAWMOD Speakers',
-    summary: 'The heart and most important part of the system',
-    details: 'Designed by JW audio with building support from Horner Audio. Five speaker drivers inside each cabinet, all firing out of the exact same horn for fantastic sonic coherence.',
+    targetAmount: 2090,
+    title: 'Stage 1: 2 × SAWMOD Horn Tops',
+    summary: 'The heart of SUBrina’s clarity',
+    details: 'Designed by JW Audio with building guidance from Horner Audio. Five drivers per cabinet fire out of one horn flare for smooth point-source coherence.',
     isKeyHeart: true,
-    tag: 'Heart of the Rig'
+    tag: 'Step 1'
   },
   {
     id: 'milestone-2',
-    targetAmount: 5500,
-    title: 'Amp Rack & DSP',
-    summary: 'Dedicated power amplifiers & digital signal processing',
-    details: 'Clean, reliable high-headroom power with FIR filtering and safety limiters to protect the speakers and keep the sound tight and musical.',
+    targetAmount: 4990,
+    title: 'Stage 2: Amplification, DSP & Cabling',
+    summary: 'Power, processing, and protection limiters',
+    details: 'With amps and processing in hand, we can test the tops and rent compatible reflex subs for events while we raise money for our own subs.',
     isKeyHeart: false,
-    tag: 'Muscle & DSP'
+    tag: 'Step 2'
   },
   {
     id: 'milestone-3',
-    targetAmount: 8500,
-    title: '4 × 18" Reflex Subwoofers',
-    summary: 'Complete system ready to shake dances up to 400 people',
-    details: 'Designed by Horner Audio. Four 18-inch reflex subwoofers for huge, effortless physical bass indoors and outdoors.',
+    targetAmount: 8590,
+    title: 'Stage 3: 4 × 18" Reflex Subwoofers',
+    summary: 'Our own subs for deep, physical low end',
+    details: 'Designed by Horner Audio. Four 18-inch reflex subwoofers tuned for bass you can physically feel without distortion.',
     isKeyHeart: false,
-    tag: 'Full Rig Complete'
+    tag: 'Step 3'
   }
 ];
 
 export const INITIAL_BUDGET_ITEMS: BudgetItem[] = [
   {
     id: 'sawmod-tops',
-    category: 'The Tops (Heart of the Rig)',
+    category: 'The Tops (Step 1)',
     title: '2 × SAWMOD Multiple Entry Horns',
-    cost: 2500,
+    cost: 2090,
     funded: 1250,
-    description: 'Designed by JW audio with building partner Horner Audio. 5 speaker drivers inside each cabinet, all playing out of the exact same horn.',
+    description: 'Designed by JW Audio with build support from Horner Audio. Five speaker drivers inside each cabinet, all firing out of the exact same horn.',
     icon: 'Megaphone',
-    specs: '5 drivers per horn • JW audio design • Point-source wavefront'
+    specs: '5 drivers per horn • JW Audio design • Point-source wavefront'
   },
   {
     id: 'amps-dsp',
-    category: 'The Muscle & Brains',
-    title: 'Amp Rack & DSP Processor',
-    cost: 3000,
+    category: 'The Power & Brains (Step 2)',
+    title: 'Amp Rack, DSP Processor & Cabling',
+    cost: 2900,
     funded: 0,
-    description: 'Powers the entire rig cleanly with built-in DSP processing and speaker protection limiters.',
+    description: 'Powers the system cleanly with DSP crossover filtering and safety limiters to protect the drivers.',
     icon: 'Cpu',
     specs: 'Clean power rack • DSP crossovers • Driver protection'
   },
   {
     id: 'subwoofers',
-    category: 'The Low End',
+    category: 'The Low End (Step 3)',
     title: '4 × 18" Reflex Subwoofers',
-    cost: 3000,
+    cost: 3600,
     funded: 0,
-    description: 'Designed by our building partner Horner Audio. 4 quad 18-inch reflex subwoofers tuned for deep, musical, and effortless physical bass.',
+    description: 'Designed by Horner Audio. Four 18-inch reflex subwoofers tuned for deep, effortless physical bass.',
     icon: 'Speaker',
-    specs: 'Horner Audio design • 4x 18" drivers • Tuned reflex'
+    specs: 'Horner Audio design • 4× 18" drivers • Tuned reflex'
   }
 ];
 
 export const DONATION_TIERS: DonationTier[] = [
   {
     id: 'tier-1',
-    name: 'Heartfelt Thank You',
+    name: 'Kiss on the Cheek',
     minAmount: 15,
-    monsterTitle: 'Audio Gremlin First Class',
-    perk: 'A heartfelt thank you, endless love, and your name etched into our community hearts.',
-    badge: '💖 Heartfelt Thank You',
+    monsterTitle: 'Friendly Supporter',
+    perk: 'A playful kiss on the cheek (or an enthusiastic high-five!) and our heartfelt gratitude for helping us build.',
+    badge: '💖 €15 Suggestion',
     color: 'from-emerald-400 to-teal-500'
   },
   {
     id: 'tier-2',
-    name: 'Chest Hug of Bass',
+    name: 'Slow Tight Dance',
     minAmount: 30,
-    monsterTitle: 'Sub-Frequency Empress',
-    perk: 'SUBrina will personally hug your whole chest with warm, physical sub-bass at our very next rave.',
-    badge: '🔊 Chest Hug of Bass',
+    monsterTitle: 'Dancefloor Sweetheart',
+    perk: 'A slow, tight dance on the dancefloor with us when SUBrina is playing.',
+    badge: '💃 €30 Suggestion',
     color: 'from-pink-500 to-rose-500'
   },
   {
     id: 'tier-3',
     name: 'DJ Song Request',
     minAmount: 60,
-    monsterTitle: 'Multiple Entry Horn VIP',
-    perk: 'Wish for a song during a set! You get to make a direct track request from the DJs (Burcu & Ayo) during one of our sets.',
-    badge: '🎵 DJ Song Request',
+    monsterTitle: 'Track Selector',
+    perk: 'Request a track during one of Ayo & Burcu’s DJ sets (we’ll do our best to blend it into the dancefloor vibe!).',
+    badge: '🎵 €60 Suggestion',
     color: 'from-purple-500 to-indigo-600'
   },
   {
     id: 'tier-4',
-    name: 'Guestlist: You + 5 Friends',
+    name: 'You + 5 on the Guestlist',
     minAmount: 200,
-    monsterTitle: 'Acoustic Legend',
-    perk: 'Guest list for you plus five friends (6 dancers total!) at our official debut party + community backer recognition.',
-    badge: '👑 Guestlist: You + 5',
+    monsterTitle: 'Crew Backer',
+    perk: 'Entry for you and five friends to a SUBrina event of your choice. Message Ayo to arrange it.',
+    badge: '👑 €200 Suggestion',
     color: 'from-amber-400 to-pink-500'
   }
 ];
@@ -211,13 +218,13 @@ export const UPCOMING_EVENTS: EventItem[] = [
   {
     id: 'ev-1',
     title: 'SUBrina FUNdraiser: Round 01 @ Lark',
-    subtitle: '',
+    subtitle: 'Come dance with us at our first fundraiser',
     date: '2026-10-09',
-    formattedDate: 'OCTOBER 9 · 21:00 – 04:00',
+    formattedDate: 'OCTOBER 9, 2026 · 21:00 – 04:00',
     time: '21:00 – 04:00',
     venue: 'Lark, Berlin',
     city: 'Berlin',
-    description: 'Join us for our inaugural FUNdraiser dance at Lark with sound healing, live electronic hardware, drag performance, and high-energy DJ sets. Every single euro goes straight into plywood flatpacks, drivers, and amplification.',
+    description: 'Come dance with us at our first fundraiser! We have an opening soundbath, live electronic hardware sets, drag performance, and DJs carrying us through the night. These nights help fund the SUBrina build.',
     lineup: [
       'Soundbath by Lai Raw',
       'Live electronic set by Kallairaw',
@@ -227,27 +234,28 @@ export const UPCOMING_EVENTS: EventItem[] = [
       'Live Auction!'
     ],
     tags: ['Lark Berlin'],
-    ticketPrice: 'Donations at door',
+    ticketPrice: 'Entry: €15. Nobody will be turned away for lack of funds.',
     ticketLink: 'https://ra.co/events/2545819',
     status: 'upcoming'
   },
   {
     id: 'ev-2',
     title: 'SUBrina FUNdraiser: Round 02 @ Secret Venue',
-    subtitle: '',
+    subtitle: 'Round two of dancing for the build',
     date: '2026-11-21',
-    formattedDate: 'NOVEMBER 21 · 21:00 – 04:00',
+    formattedDate: 'NOVEMBER 21, 2026 · 21:00 – 04:00',
     time: '21:00 – 04:00',
-    venue: 'Secret Venue',
+    venue: 'Secret Venue, Berlin',
     city: 'Berlin',
-    description: 'Round 02 of our SUBrina FUNdraiser series! Immersive soundbath, live electronic instrumentation, and DJ curation into the early morning. Venue announced closer to the date.',
+    description: 'Round two of our SUBrina fundraiser dances! An ambient cello soundbath, live electronic sets, and DJ selections into the early morning. Venue announced closer to the date. These nights help fund the SUBrina build.',
     lineup: [
       'Soundbath by SIC and Simon Hoffman (electronic & Cello)',
       'Live set by Avi Schneider',
       'More acts & DJs TBA'
     ],
     tags: ['Secret Venue'],
-    ticketPrice: 'Donations at door',
+    ticketPrice: 'Entry: €15. Nobody will be turned away for lack of funds.',
+    ticketLink: '', // Secret venue, contact route provided directly
     status: 'upcoming'
   }
 ];
@@ -256,12 +264,12 @@ export const CREW_MEMBERS: CrewMember[] = [
   {
     id: 'crew-burcu',
     name: 'Burcu',
-    monsterAlias: 'Nightlife Curator',
-    role: 'Nightlife Curator, Producer & Performer',
-    bio: 'In the Berlin nightlife scene for years as a dancer, performer, and producer through her Agentur für Nightlife. Passionate about creating safe, high-vibe spaces and taking sound quality into our own hands so our community gets the sound they truly deserve.',
+    monsterAlias: 'Community Organizer',
+    role: 'Event Producer & Performer',
+    bio: 'Longtime Berlin dancer, performer, and organizer with Agentur für Nightlife. Passionate about warm, safe dancefloors and bringing sound quality into our own hands so our friends get the sound they deserve.',
     monsterEmoji: '🎀',
-    specialty: 'Event production, nightlife curation, community care',
-    favoriteHz: '42 Hz (Deep Chest Warmth)',
+    specialty: 'Community events, gatherings, stage production',
+    favoriteHz: '42 Hz',
     favoriteGenre: 'Deep Grooves & Fast Rhythms',
     pronouns: 'she/her',
     accentColor: 'from-pink-500 to-purple-600'
@@ -269,12 +277,12 @@ export const CREW_MEMBERS: CrewMember[] = [
   {
     id: 'crew-ayo',
     name: 'Ayo',
-    monsterAlias: 'Acoustic Alchemist',
-    role: 'DJ, Sound Tinkerer & Builder',
-    bio: 'Deeply involved in nightlife and club culture with Heart Chor as a DJ and event organizer. Partnering closely with Horner Audio to build, wire, and tune our Multiple Entry Horn system for laser-sharp coherence and zero ear fatigue.',
+    monsterAlias: 'Sound Builder',
+    role: 'DJ & Sound Builder',
+    bio: 'DJ with Heart Chor and event organizer. Working closely with Horner Audio in the workshop to assemble, wire, and tune the SAWMOD horns and reflex subs for clear, non-fatiguing sound.',
     monsterEmoji: '⚡',
-    specialty: 'Acoustics, speaker building, DSP alignment, DJ sets',
-    favoriteHz: '33 Hz (Physical Sub-Bass)',
+    specialty: 'Speaker building, workshop assembly, DJ sets',
+    favoriteHz: '33 Hz',
     favoriteGenre: 'Bass & Breakbeats',
     pronouns: 'they/he',
     accentColor: 'from-amber-400 to-pink-500'

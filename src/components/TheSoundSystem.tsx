@@ -1,339 +1,329 @@
 import React, { useState } from 'react';
-import { ChevronDown, Volume2, Sparkles, Sliders, Zap, Check, Maximize2, X } from 'lucide-react';
+import { ChevronDown, Volume2, Sparkles, Check, X } from 'lucide-react';
 import litUpSawmodImg from '../assets/images/lit_up_sawmod.jpg';
 import subLightImg from '../assets/images/sub_light.jpeg';
 import subrinaMockupWideImg from '../assets/images/subrina_mockup_wide.jpeg';
 import { BuildGallery } from './BuildGallery';
 
 export const TheSoundSystem: React.FC = () => {
-  const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
+  const [isSoundNerdsOpen, setIsSoundNerdsOpen] = useState(false);
   const [activeModalImage, setActiveModalImage] = useState<{
     src: string;
     title: string;
-    tag: string;
     description: string;
-    specs: string;
   } | null>(null);
 
-  const cards = [
-    {
-      id: 'sawmod-tops',
-      emoji: '🎺',
-      tag: 'Heart of the Rig',
-      title: '2 × SAWMOD Tops',
-      designer: 'Designed by JW Audio',
-      summary: '5 speaker drivers inside each cabinet, all firing out of the exact same horn flare.',
-      image: litUpSawmodImg,
-      imageAlt: 'Illuminated JW Audio SAWMOD multiple entry horn throat showing driver convergence',
-      imageBadge: 'Illuminated Horn Flare',
-      modalTag: 'JW Audio Prototype',
-      modalTitle: '2 × SAWMOD Tops — Multiple Entry Horn Illuminated',
-      modalDescription: 'Look inside the throat: five drivers enter the acoustic chamber through precision-machined ports to fire out as one single point-source wavefront.',
-      modalSpecs: '5 Drivers • 1 Horn Flare',
-      bg: 'bg-[#fdf4ff] text-[#1e0538]',
-      tilt: 'tilt-left',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#f43f5e]',
-      badgeColor: 'bg-[#f43f5e] text-white',
-    },
-    {
-      id: 'reflex-subs',
-      emoji: '🔊',
-      tag: 'Physical Low End',
-      title: '4 × 18" Reflex Subs',
-      designer: 'Designed by Horner Audio',
-      summary: 'Four (yes FOUR!) tuned 18-inch reflex subwoofers for huge, effortless physical bass without muddy distortion.',
-      image: subLightImg,
-      imageAlt: 'Horner Audio tuned 18-inch reflex subwoofers illuminated in the workshop',
-      imageBadge: '18" Horner Audio Sub',
-      modalTag: 'Horner Audio Subwoofer',
-      modalTitle: '4 × 18" Reflex Subwoofers in Action',
-      modalDescription: 'Precision tuned 18-inch bass reflex design providing deep physical authority and fast transient low-end response down to 30 Hz.',
-      modalSpecs: '4 × 18" High-Excursion Reflex',
-      bg: 'bg-[#FFB400] text-[#1e0538]',
-      tilt: 'tilt-right',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
-      badgeColor: 'bg-[#1e0538] text-[#FFB400]',
-    },
-    {
-      emoji: '⚡',
-      tag: 'Muscle & Brains',
-      title: 'Amp Rack & DSP',
-      designer: 'Digital Signal Processing',
-      summary: 'High-headroom clean amplification with FIR filtering, dynamic safety limiters, and precision crossover.',
-      bg: 'bg-[#38bdf8] text-[#1e0538]',
-      tilt: 'tilt-left',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
-      badgeColor: 'bg-[#1e0538] text-white',
-    },
-    {
-      emoji: '👥',
-      tag: 'Coverage',
-      title: '400 Indoors / 200 Outdoors',
-      designer: 'Dancefloor Capacity',
-      summary: 'Sized to fill intimate club spaces or outdoor festival fields with uncompromising presence.',
-      bg: 'bg-[#ec4899] text-white',
-      tilt: 'tilt-right',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#FFB400]',
-      badgeColor: 'bg-[#FFB400] text-[#1e0538]',
-    },
-    {
-      emoji: '🚐',
-      tag: 'Mobility',
-      title: 'Portable & Van-Ready',
-      designer: 'Smart Dimensions',
-      summary: 'Prioritises a very present sound while maintaining manageable dimensions and weights for transport.',
-      bg: 'bg-[#fdf4ff] text-[#1e0538]',
-      tilt: 'tilt-left',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#38bdf8]',
-      badgeColor: 'bg-[#38bdf8] text-[#1e0538]',
-    },
-    {
-      emoji: '🪵',
-      tag: 'Craftsmanship',
-      title: 'Baltic Birch Wood',
-      designer: 'CNC Precision Joinery',
-      summary: '100% void-free premium Baltic birch plywood with internal bracing to eliminate unwanted box resonances.',
-      bg: 'bg-[#c084fc] text-[#1e0538]',
-      tilt: 'tilt-right',
-      accentColor: 'border-[#1e0538] shadow-[5px_5px_0_#1e0538]',
-      badgeColor: 'bg-[#1e0538] text-white',
-    },
-  ];
-
   return (
-    <section id="system" className="py-20 sm:py-28 px-4 sm:px-6 md:px-10 bg-[#19092b] text-[#fdf4ff]">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Heading & Rig Showcase */}
-        <div className="mb-14 sm:mb-16">
+    <section id="the-build" className="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-[#19092b] text-[#fdf4ff] border-b border-white/10">
+      <div className="max-w-6xl mx-auto">
+        {/* Main Section Heading */}
+        <div className="max-w-3xl mb-8">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] mb-3">
+            <Volume2 className="w-3.5 h-3.5" />
+            <span>The Setup</span>
+          </span>
+
           <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.05em] leading-[0.9] mb-8"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-[-0.04em] leading-tight text-[#fdf4ff]"
             style={{ fontFamily: 'var(--display)' }}
           >
-            SUBrina,<br />
-            <em className="text-[#f43f5e] font-normal not-italic" style={{ fontFamily: 'var(--serif)' }}>
-              candy to our ears.
-            </em>
+            What we’re building
           </h2>
 
-          {/* Smooth, minimal presentation of what the system will look like — no card, minimal graphics */}
-          <div className="relative w-full max-w-5xl mx-auto my-8 sm:my-10">
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/30">
-              <img
-                src={subrinaMockupWideImg}
-                alt="SUBrina Sound System Complete Rig — 2 SAWMOD Tops & 4 Horner 18-inch Subwoofers"
-                className="w-full h-auto object-contain max-h-[560px] mx-auto filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.85)] hover:scale-[1.01] transition-transform duration-500 cursor-pointer"
-                onClick={() =>
-                  setActiveModalImage({
-                    src: subrinaMockupWideImg,
-                    title: 'SUBrina Complete Rig Concept',
-                    tag: 'The Full Sound System',
-                    description:
-                      'What SUBrina looks like in full flight: 2 × JW Audio SAWMOD multiple entry horn tops elevated above 4 × Horner Audio 18-inch reflex subwoofers.',
-                    specs: 'Complete 4-Way Rig',
-                  })
-                }
-              />
-            </div>
-            <p className="text-center text-xs sm:text-sm text-[#fdf4ff]/70 mt-3 font-medium">
-              The full SUBrina rig · 2 × SAWMOD Multiple Entry Horn tops & 4 × Horner Audio 18" reflex subs
+          <div className="mt-4 space-y-3 text-base sm:text-lg text-white/90 leading-relaxed font-normal">
+            <p>
+              Two SAWMOD horn speakers and four 18-inch reflex subs, plus the amps and processing to run everything. The aim is clear sound, bass you can feel, and a setup we can still transport in a van.
+            </p>
+            <p className="text-white/80 text-sm sm:text-base">
+              Horner Audio are helping with the engineering and giving us time and workshop space to make it happen.
             </p>
           </div>
         </div>
 
-        {/* 6 Playful Animated Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {cards.map((c, idx) => (
-            <div
-              key={idx}
-              className={`p-6 sm:p-7 rounded-[1.4rem] border-2 flex flex-col justify-between cursor-default transition-all duration-300 ${c.bg} ${c.tilt} ${c.accentColor}`}
-            >
-              <div>
-                {/* Header with Emoji & Badge */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-4xl select-none">{c.emoji}</span>
-                  <span className={`text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full border border-current ${c.badgeColor}`}>
-                    {c.tag}
-                  </span>
-                </div>
+        {/* Rig Image (Clearly Labeled as a 3D Concept Mockup) */}
+        <div className="relative w-full max-w-4xl mx-auto my-8">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#120520] border-2 border-white/15 p-4 sm:p-6 text-center">
+            <img
+              src={subrinaMockupWideImg}
+              alt="SUBrina soundsystem 3D concept mockup render — two SAWMOD tops and four 18-inch reflex subs"
+              className="w-full h-auto object-contain max-h-[460px] mx-auto filter drop-shadow-[0_15px_40px_rgba(0,0,0,0.85)] cursor-pointer hover:scale-[1.01] transition-transform duration-300"
+              onClick={() =>
+                setActiveModalImage({
+                  src: subrinaMockupWideImg,
+                  title: 'SUBrina Soundsystem (3D Concept Mockup)',
+                  description:
+                    'Visual 3D design concept showing the planned chrome-epoxy finish on two SAWMOD tops stacked above four Horner 18-inch reflex subwoofers.'
+                })
+              }
+            />
 
-                <h3
-                  className="text-2xl font-black uppercase tracking-tight mb-1"
-                  style={{ fontFamily: 'var(--display)' }}
-                >
-                  {c.title}
-                </h3>
-
-                <div className="text-xs font-bold uppercase tracking-wider opacity-75 mb-3">
-                  {c.designer}
-                </div>
-
-                {/* Direct photo in card */}
-                {c.image && (
-                  <div
-                    className="my-3.5 relative rounded-xl overflow-hidden border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] bg-black group cursor-pointer"
-                    onClick={() =>
-                      setActiveModalImage({
-                        src: c.image!,
-                        title: c.modalTitle || c.title,
-                        tag: c.modalTag || c.tag,
-                        description: c.modalDescription || c.summary,
-                        specs: c.modalSpecs || '',
-                      })
-                    }
-                  >
-                    <img
-                      src={c.image}
-                      alt={c.imageAlt || c.title}
-                      className="w-full h-44 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent flex items-end p-2.5">
-                      <div className="flex items-center justify-between w-full text-[11px] font-bold text-white">
-                        <span className="text-[#FFB400] flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-[#f43f5e] animate-pulse"></span>
-                          {c.imageBadge || 'View Photo'}
-                        </span>
-                        <span className="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded text-[10px] text-white/90 flex items-center gap-1 group-hover:bg-[#f43f5e] transition-colors">
-                          <Maximize2 className="w-3 h-3" /> Zoom
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <p className="text-xs sm:text-sm font-medium leading-relaxed opacity-90">
-                  {c.summary}
-                </p>
-              </div>
+            {/* Clear Mockup Label */}
+            <div className="mt-3 flex items-center justify-between text-xs text-white/60 px-2 flex-wrap gap-2">
+              <span className="font-mono uppercase tracking-wider text-[11px] text-[#FFB400] font-bold">
+                ✦ 3D Design Concept Mockup
+              </span>
+              <span>
+                Tops designed by <strong>JW Audio</strong> · Subs engineered by <strong>Horner Audio</strong>
+              </span>
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Unfurlable Deep Dive Box: How the Multiple Entry Horn Works */}
-        <div className="mt-12 rounded-[1.6rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#f43f5e] overflow-hidden transition-all duration-300">
+        {/* Staged Build Plan Card */}
+        <div className="p-6 sm:p-8 rounded-[1.8rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#38bdf8] my-10">
+          <div className="max-w-3xl">
+            <span className="text-xs font-black uppercase tracking-wider text-[#38bdf8] block mb-1">
+              Phased Construction Plan
+            </span>
+            <h3
+              className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#fdf4ff] mb-3 leading-snug"
+              style={{ fontFamily: 'var(--display)' }}
+            >
+              We don’t have to build everything at once
+            </h3>
+
+            <div className="space-y-3 text-sm sm:text-base text-white/90 leading-relaxed font-normal">
+              <p>
+                We’ll start with the SAWMOD tops, then the amplification. After that come our own subs.
+              </p>
+              <p>
+                If we don’t reach the full target straight away, we can rent compatible reflex subs for events while we keep raising money. So we can work towards getting SUBrina playing without waiting until we can afford every part of the finished rig.
+              </p>
+              <p className="text-xs sm:text-sm text-white/60 italic pt-1">
+                Spring is our target launch, not an absolute guarantee—the timeline will follow fundraising progress and workshop building hours.
+              </p>
+            </div>
+
+            {/* 3 Step Visual Sequence */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mt-6 pt-6 border-t border-white/10">
+              <div className="p-4 rounded-xl bg-[#19092b] border border-white/10">
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#FFB400] block mb-1">
+                  Step 1
+                </span>
+                <span className="text-sm font-black uppercase block text-white">
+                  SAWMOD Horn Tops
+                </span>
+                <span className="text-xs text-white/70 block mt-1">
+                  Two Baltic birch cabinets with precision 5-driver acoustic flares.
+                </span>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#19092b] border border-white/10">
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#ec4899] block mb-1">
+                  Step 2
+                </span>
+                <span className="text-sm font-black uppercase block text-white">
+                  Amps & DSP Processing
+                </span>
+                <span className="text-xs text-white/70 block mt-1">
+                  Power rack, DSP crossovers, and limiters. Enables renting subs to play events.
+                </span>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#19092b] border border-white/10">
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#38bdf8] block mb-1">
+                  Step 3
+                </span>
+                <span className="text-sm font-black uppercase block text-white">
+                  4 × 18" Horner Subs
+                </span>
+                <span className="text-xs text-white/70 block mt-1">
+                  Our own dedicated subwoofers for complete autonomy and massive low end.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Expandable Section: For the sound nerds: the full setup */}
+        <div className="rounded-[1.8rem] bg-[#25123d] border-2 border-[#2e1065] shadow-[6px_6px_0_#FFB400] overflow-hidden transition-all duration-300">
           <button
-            onClick={() => setIsDeepDiveOpen(!isDeepDiveOpen)}
+            onClick={() => setIsSoundNerdsOpen(!isSoundNerdsOpen)}
             className="w-full p-5 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left hover:bg-[#2e1065]/50 transition-colors cursor-pointer group"
-            aria-expanded={isDeepDiveOpen}
+            aria-expanded={isSoundNerdsOpen}
           >
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538] border border-[#1e0538] shadow-[2px_2px_0_#1e0538] shrink-0">
-                WHY IT SOUNDS DIFFERENT
+            <div>
+              <span className="text-[11px] font-black uppercase tracking-wider text-[#FFB400] block mb-0.5">
+                Technical Specifications & Acoustical Details
               </span>
               <h3
                 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-[#fdf4ff] group-hover:text-[#FFB400] transition-colors leading-tight"
                 style={{ fontFamily: 'var(--display)' }}
               >
-                Why a Multiple Entry Horn? (The Acoustic Magic)
+                For the sound nerds: the full setup
               </h3>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#FFB400] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2 rounded-full border border-white/10 group-hover:border-[#FFB400] transition-colors">
-              <span>{isDeepDiveOpen ? 'Collapse' : 'Deep Dive'}</span>
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#FFB400] shrink-0 self-start sm:self-center bg-[#19092b] px-4 py-2.5 rounded-full border border-white/10 group-hover:border-[#FFB400] transition-colors">
+              <span>{isSoundNerdsOpen ? 'Hide Technical Details' : 'Explore Technical Specs'}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-300 ${
-                  isDeepDiveOpen ? 'rotate-180 text-[#f43f5e]' : ''
+                  isSoundNerdsOpen ? 'rotate-180' : ''
                 }`}
               />
             </div>
           </button>
 
-          {isDeepDiveOpen && (
-            <div className="px-6 pb-8 sm:px-10 sm:pb-10 pt-4 border-t border-[#2e1065] animate-in fade-in slide-in-from-top-2 duration-200">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
-                <div>
-                  <h4
-                    className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#fdf4ff] mb-4"
-                    style={{ fontFamily: 'var(--display)' }}
-                  >
-                    Point-Source Wavefront vs. Traditional Stacks
-                  </h4>
-                  <p className="text-sm sm:text-base text-[#fdf4ff]/85 leading-relaxed mb-4">
-                    Traditional club sound systems place tweeters, mid-range speakers, and woofers in separate positions. On the dancefloor, the sound from these separate drivers arrives at your ears at slightly different times, creating phase cancellations, comb filtering, and that fatiguing harshness.
-                  </p>
-                  <p className="text-sm sm:text-base text-[#fdf4ff]/85 leading-relaxed">
-                    In the <strong>JW Audio SAWMOD</strong>, all 5 drivers feed into the exact same horn flare at mathematically optimized entry points. They merge into a single, cohesive spherical wavefront — like a giant, supercharged point source. The result is razor-sharp transient response, fatigue-free highs, and a punchy, spacious soundstage.
-                  </p>
+          {isSoundNerdsOpen && (
+            <div className="px-5 pb-8 sm:px-8 sm:pb-10 pt-4 border-t border-white/10 space-y-8 animate-in fade-in duration-200">
+              {/* Feature Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* SAWMOD Horn Tops */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-[#19092b] border border-white/10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-black uppercase tracking-wider text-[#f43f5e]">
+                        Point-Source Tops
+                      </span>
+                      <span className="text-xs font-mono text-white/50">Designed by JW Audio</span>
+                    </div>
+
+                    <h4 className="text-lg sm:text-xl font-black uppercase text-white mb-2" style={{ fontFamily: 'var(--display)' }}>
+                      2 × SAWMOD Multiple Entry Horns
+                    </h4>
+
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                      Instead of having separate speaker boxes for highs, mids, and lows (which create phase smearing when their sound waves collide), the SAWMOD mounts five precision drivers into the walls of one single horn flare. Highs, mids, and low-mids exit together as a single coherent wavefront for razor-sharp clarity without ear fatigue.
+                    </p>
+
+                    <div className="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-[#FFB400] space-y-1">
+                      <div>• Highs: 1× B&C 1" compression driver</div>
+                      <div>• Mids: 4× B&C 4" neodymium midrange drivers</div>
+                      <div>• Low-Mids: 4× B&C 10" neodymium drivers</div>
+                      <div>• 100° Horizontal × 70° Vertical constant directivity</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-white/10">
+                    <img
+                      src={litUpSawmodImg}
+                      alt="Illuminated prototype of the SAWMOD horn flare showing driver entry ports"
+                      className="w-full h-36 object-cover rounded-xl border border-white/15 cursor-pointer hover:opacity-90"
+                      onClick={() =>
+                        setActiveModalImage({
+                          src: litUpSawmodImg,
+                          title: 'SAWMOD Multiple Entry Horn Throat',
+                          description:
+                            'Looking inside the horn flare prototype: acoustic ports allow midrange and low-mid drivers to enter the chamber seamlessly.'
+                        })
+                      }
+                    />
+                    <span className="text-[10px] text-white/50 block mt-1 text-center font-mono">
+                      Workshop prototype throat & entry ports
+                    </span>
+                  </div>
                 </div>
 
-                {/* Quick Graphic Specs */}
-                <div className="p-6 rounded-2xl bg-[#19092b] border-2 border-[#2e1065] text-xs font-bold space-y-3">
-                  <div className="flex justify-between items-center pb-2 border-b border-white/10">
-                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Horn Architecture</span>
-                    <span className="text-[#FFB400]">SAWMOD Multiple Entry Horn</span>
+                {/* Subwoofers */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-[#19092b] border border-white/10 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-black uppercase tracking-wider text-[#FFB400]">
+                        Sub-Bass Foundation
+                      </span>
+                      <span className="text-xs font-mono text-white/50">Designed by Horner Audio</span>
+                    </div>
+
+                    <h4 className="text-lg sm:text-xl font-black uppercase text-white mb-2" style={{ fontFamily: 'var(--display)' }}>
+                      4 × 18" Bass Reflex Subwoofers
+                    </h4>
+
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                      Custom-engineered tuned reflex enclosures built from 18mm Baltic birch with internal matrix bracing. Each loaded with an 18-inch B&C neodymium driver, delivering deep physical chest pressure and fast transient bass response down to 30 Hz without distortion.
+                    </p>
+
+                    <div className="mt-4 pt-3 border-t border-white/10 text-xs font-mono text-[#FFB400] space-y-1">
+                      <div>• Drivers: 4× B&C 18DS115-8 Neodymium (18")</div>
+                      <div>• Enclosure: 18mm CNC Baltic birch with internal bracing</div>
+                      <div>• Tuning: Deep musical bass down to 30 Hz</div>
+                      <div>• M20 threaded pole mounts for stable top mounting</div>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/10">
-                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Designer</span>
-                    <span className="text-[#FFB400]">JW Audio</span>
+
+                  <div className="mt-4 pt-3 border-t border-white/10">
+                    <img
+                      src={subLightImg}
+                      alt="Horner Audio 18-inch reflex subwoofer enclosure"
+                      className="w-full h-36 object-cover rounded-xl border border-white/15 cursor-pointer hover:opacity-90"
+                      onClick={() =>
+                        setActiveModalImage({
+                          src: subLightImg,
+                          title: 'Horner Audio 18" Reflex Subwoofer',
+                          description:
+                            'Enclosure built with 18mm Baltic birch plywood and internal bracing for tight, resonance-free bass reproduction.'
+                        })
+                      }
+                    />
+                    <span className="text-[10px] text-white/50 block mt-1 text-center font-mono">
+                      Horner Audio subwoofer enclosure build
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/10">
-                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Drivers Per Top</span>
-                    <span className="text-[#f43f5e]">5 Drivers in 1 Horn Throat</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/10">
-                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Subwoofers</span>
-                    <span className="text-[#38bdf8]">4 × 18" Horner Audio Reflex</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#fdf4ff]/60 uppercase tracking-wider">Frequency Band</span>
-                    <span className="text-[#fdf4ff]">30 Hz – 20,000 Hz</span>
+                </div>
+
+                {/* Amplification, DSP & Cabinetry */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-[#19092b] border border-white/10 md:col-span-2">
+                  <h4 className="text-base sm:text-lg font-black uppercase text-white mb-2" style={{ fontFamily: 'var(--display)' }}>
+                    Power, Processing & Portability
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-white/80">
+                    <div>
+                      <strong className="text-[#38bdf8] block mb-1">Amplification & DSP</strong>
+                      Class-D amplification paired with a standalone 4-in / 8-out digital signal processor. Features FIR phase correction and dynamic safety limiters to protect the drivers.
+                    </div>
+                    <div>
+                      <strong className="text-[#ec4899] block mb-1">Van-Friendly Transport</strong>
+                      Each cabinet is designed to be carried by two people. The entire rig packs neatly into a standard van or larger car without requiring a commercial truck.
+                    </div>
+                    <div>
+                      <strong className="text-[#FFB400] block mb-1">Coverage Potential</strong>
+                      Approximate capacity: sized to fill spaces of up to ~400 people indoors or ~150–200 outdoors with massive low end, depending on the venue layout and acoustic environment.
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Build Gallery */}
+              <BuildGallery />
             </div>
           )}
         </div>
-
-        {/* SAWMOD and Horner Audio Build Gallery directly underneath why it sounds different */}
-        <BuildGallery />
-
-        {/* Modal preview when clicking any photo card */}
-        {activeModalImage && (
-          <div
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
-            onClick={() => setActiveModalImage(null)}
-          >
-            <div
-              className="relative max-w-4xl w-full bg-[#19092b] border-2 border-[#f43f5e] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(244,63,94,0.4)]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="p-4 sm:p-5 border-b border-[#2e1065] flex items-center justify-between bg-[#19092b]">
-                <div className="flex items-center gap-3">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#FFB400] text-[#1e0538]">
-                    {activeModalImage.tag}
-                  </span>
-                  <h4 className="text-base sm:text-lg font-black uppercase text-white truncate max-w-xs sm:max-w-md">
-                    {activeModalImage.title}
-                  </h4>
-                </div>
-                <button
-                  onClick={() => setActiveModalImage(null)}
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f43f5e] text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
-                  aria-label="Close modal"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="relative bg-black flex items-center justify-center max-h-[75vh]">
-                <img
-                  src={activeModalImage.src}
-                  alt={activeModalImage.title}
-                  className="w-full h-auto max-h-[75vh] object-contain"
-                />
-              </div>
-
-              <div className="p-4 sm:p-5 bg-[#25123d] border-t border-[#2e1065] text-xs sm:text-sm text-[#fdf4ff]/85 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-medium">
-                <span>{activeModalImage.description}</span>
-                {activeModalImage.specs && (
-                  <span className="text-[#FFB400] font-bold shrink-0">
-                    {activeModalImage.specs}
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Lightbox Modal for Preview Images */}
+      {activeModalImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-150"
+          onClick={() => setActiveModalImage(null)}
+        >
+          <div
+            className="relative max-w-3xl w-full bg-[#19092b] border-2 border-white/20 rounded-2xl p-5 sm:p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+              <h4 className="text-base sm:text-lg font-black uppercase text-white" style={{ fontFamily: 'var(--display)' }}>
+                {activeModalImage.title}
+              </h4>
+              <button
+                onClick={() => setActiveModalImage(null)}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#f43f5e] text-white flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <img
+              src={activeModalImage.src}
+              alt={activeModalImage.title}
+              className="w-full h-auto max-h-[60vh] object-contain rounded-xl mx-auto mb-3"
+            />
+
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+              {activeModalImage.description}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

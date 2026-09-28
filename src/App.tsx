@@ -1,40 +1,26 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { FundraisingProgress } from './components/FundraisingProgress';
+import { WhereSheWillPlay } from './components/WhereSheWillPlay';
 import { EventsSection } from './components/EventsSection';
 import { TheSoundSystem } from './components/TheSoundSystem';
-import { FundraiserTracker } from './components/FundraiserTracker';
-import { SupportersWall } from './components/SupportersWall';
-import { Manifesto } from './components/Manifesto';
+import { BudgetSection } from './components/BudgetSection';
 import { SoundHireAndFaq } from './components/SoundHireAndFaq';
+import { SupportersWall } from './components/SupportersWall';
 import { Footer } from './components/Footer';
 import { 
   INITIAL_FUNDRAISING_GOAL, 
+  CURRENT_TOTAL_RAISED,
   INITIAL_DONORS, 
-  INITIAL_ANONYMOUS_COUNT, 
-  INITIAL_ANONYMOUS_TOTAL, 
   UPCOMING_EVENTS 
 } from './data';
 import { Donor } from './types';
 
 export default function App() {
-  // Core dynamic fundraiser states
   const [goal] = useState(INITIAL_FUNDRAISING_GOAL);
+  const [totalRaised] = useState(CURRENT_TOTAL_RAISED);
   const [donors] = useState<Donor[]>(INITIAL_DONORS);
-  const [anonymousCount] = useState(INITIAL_ANONYMOUS_COUNT);
-  const [anonymousTotal, setAnonymousTotal] = useState(INITIAL_ANONYMOUS_TOTAL);
-
-  // Compute total raised dynamically
-  const namedDonorsTotal = donors.reduce((sum, d) => sum + d.amount, 0);
-  const totalRaised = namedDonorsTotal + anonymousTotal;
-
-  // Allow organizers to sync or manually adjust total raised to match the live PayPal Pool
-  const handleUpdateTotalManually = (newTotal: number) => {
-    const difference = newTotal - totalRaised;
-    if (difference !== 0) {
-      setAnonymousTotal((prev) => Math.max(0, prev + difference));
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#19092b] text-[#fdf4ff] flex flex-col selection:bg-[#ec4899] selection:text-white">
@@ -44,42 +30,38 @@ export default function App() {
         goal={goal}
       />
 
-      {/* Main One-Pager Flow */}
+      {/* Main One-Pager Flow strictly following the requested order */}
       <main className="flex-1">
-        {/* Hero Section with Fast Facts & Running Ticker */}
-        <Hero
+        {/* 1. Opening and clear donation invitation */}
+        <Hero />
+
+        {/* 2. Fundraising progress */}
+        <FundraisingProgress
           totalRaised={totalRaised}
           goal={goal}
         />
 
-        {/* 01 / Calendar & Gatherings (Events first!) */}
+        {/* 3. A short section about where SUBrina will play */}
+        <WhereSheWillPlay />
+
+        {/* 4. Upcoming fundraiser events */}
         <EventsSection
           events={UPCOMING_EVENTS}
         />
 
-        {/* 02 / The Sound System Architecture (Multiple Entry Horns) */}
+        {/* 5. What we’re building, including the staged build plan */}
         <TheSoundSystem />
 
-        {/* 03 / The Community FUNdraiser (€8,500 One Goal with PayPal Pool) */}
-        <FundraiserTracker
-          totalRaised={totalRaised}
-          goal={goal}
-          totalDonorsCount={donors.length}
-          anonymousCount={anonymousCount}
-          anonymousTotal={anonymousTotal}
-          onUpdateTotalManually={handleUpdateTotalManually}
-        />
+        {/* 6. Budget summary with an expandable detailed breakdown */}
+        <BudgetSection />
 
-        {/* 04 / Community Supporters & Backer Wall */}
+        {/* 7. Practical FAQ */}
+        <SoundHireAndFaq />
+
+        {/* 8. Supporters and a final donation invitation */}
         <SupportersWall
           donors={donors}
         />
-
-        {/* Unfurlable Mission & Origin (Down by the FAQ) */}
-        <Manifesto />
-
-        {/* Frequently Asked Questions & Contact */}
-        <SoundHireAndFaq />
       </main>
 
       {/* Site Footer */}
