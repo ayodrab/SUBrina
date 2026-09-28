@@ -110,8 +110,8 @@ export const FUNDRAISING_MILESTONES: FundraisingMilestone[] = [
     id: 'milestone-3',
     targetAmount: 8500,
     title: '4 × 18" Reflex Subwoofers',
-    summary: 'Complete rig covering 200–250 core dancers and 500–800 event guests',
-    details: 'Designed by Horner Audio. Four 18-inch reflex subwoofers for huge, effortless physical bass (100–105 dBA core) and clean peripheral sound up to 40 meters away.',
+    summary: 'Complete system ready to shake dances up to 400 people',
+    details: 'Designed by Horner Audio. Four 18-inch reflex subwoofers for huge, effortless physical bass indoors and outdoors.',
     isKeyHeart: false,
     tag: 'Full Rig Complete'
   }

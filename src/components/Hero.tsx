@@ -89,28 +89,20 @@ export const Hero: React.FC<HeroProps> = ({ totalRaised, goal }) => {
             </p>
           </div>
 
-          <a
-            href="#dancefloor-power"
-            className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] hover:border-[#ec4899] text-left shadow-lg transition-all group block cursor-pointer"
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs font-black uppercase tracking-wider text-[#ec4899] group-hover:text-[#FFB400] transition-colors">
-                Dancefloor Power
-              </span>
-              <span className="text-[10px] font-bold text-white/50 group-hover:text-white transition-colors">
-                Explore Zones →
-              </span>
-            </div>
+          <div className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] text-left shadow-lg">
+            <span className="text-xs font-black uppercase tracking-wider text-[#ec4899] block mb-1">
+              Dancefloor Power
+            </span>
             <div
-              className="text-2xl sm:text-3xl font-black text-[#fdf4ff] tracking-tight leading-tight"
+              className="text-3xl sm:text-4xl font-black text-[#fdf4ff] tracking-tight"
               style={{ fontFamily: 'var(--display)' }}
             >
-              200–250 Floor · 500–800 Area
+              Up to 400
             </div>
             <p className="text-xs text-[#fdf4ff]/70 mt-1 font-medium">
-              200–250 core dancers outdoors (up to 350 indoors), and 500–800 total footprint across peripheral bar & lounge zones
+              Versatile coverage for 400 people indoors and 150–200 outdoors with massive low end
             </p>
-          </a>
+          </div>
 
           <div className="p-5 rounded-2xl bg-[#25123d]/85 backdrop-blur-md border-2 border-[#2e1065] text-left shadow-lg">
             <span className="text-xs font-black uppercase tracking-wider text-[#38bdf8] block mb-1">
