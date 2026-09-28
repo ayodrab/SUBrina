@@ -45,15 +45,15 @@ export const Hero: React.FC = () => {
         {/* Warm Personal Intro */}
         <div className="max-w-2xl space-y-4 text-base sm:text-lg text-[#fdf4ff]/90 leading-relaxed font-normal mb-8">
           <p className="font-semibold text-lg sm:text-xl text-[#FFB400]">
-            We’re Ayo & Burcu, and we’re building a soundsystem for the parties we keep throwing.
+            We’re Ayo & Burcu, and we’re building a mobile soundsystem that's one step above a funktion one.
           </p>
 
           <p>
-            Between us and our friends, there are parties, weddings, retreats, small festivals and burn-style gatherings happening all the time. They all need sound. Too often, we end up piecing something together that does the job but doesn’t quite sound how we want it to.
+            Between us and you, there are parties, weddings, retreats, small festivals and burn-style gatherings happening all the time. We rent or bring our own stuff but getting top of the line stuff is either too expensive or complicated. We want to change that.
           </p>
 
           <p>
-            It’s time we got the good stuff going. Big, physical bass. Clear sound. And a system we know inside out.
+            It’s time we got the good stuff going. Big, dirty stinkin' bass. Crystal clear sound that doesn't feel too loud.
           </p>
 
           <div className="p-4 sm:p-5 rounded-2xl bg-[#25123d]/90 border border-white/15 text-sm sm:text-base text-white/95">

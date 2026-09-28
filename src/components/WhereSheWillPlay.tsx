@@ -27,7 +27,7 @@ export const WhereSheWillPlay: React.FC = () => {
           </p>
 
           <p>
-            And hopefully at more outdoor gatherings too. We’d love to do our own Fête de la Musique and 1st of May situations. Having our own sound would make it much easier to get these things going.
+            And hopefully at more outdoor gatherings too. Maybe we’d put something on at Fête de la Musique or 1st of May, as a possibility. Having our own sound would make it much easier to get things like that going.
           </p>
 
           <p className="text-sm sm:text-base text-white/70 italic bg-[#25123d] p-4 rounded-xl border border-white/10">

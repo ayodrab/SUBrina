@@ -30,12 +30,18 @@ export const TheSoundSystem: React.FC = () => {
             What we’re building
           </h2>
 
-          <div className="mt-4 space-y-3 text-base sm:text-lg text-white/90 leading-relaxed font-normal">
+          <div className="mt-4 space-y-4 text-base sm:text-lg text-white/90 leading-relaxed font-normal">
             <p>
-              Two SAWMOD horn speakers and four 18-inch reflex subs, plus the amps and processing to run everything. The aim is clear sound, bass you can feel, and a setup we can still transport in a van.
+              If you think a Funktion-One system is the best of the best, think again. It’s 2026, and we’re taking inspiration from the exciting developments in open-source speaker design. We’re building the kind of system we’d happily retire an old Funktion-One rig for. This is genuinely next-level stuff.
+            </p>
+            <p>
+              Two SAWMOD multiple-entry horn tops, four 18-inch subs, and carefully tuned amplification and processing. Five drivers in each top share a single horn, designed to work together as one coherent sound source. Serious clarity, physical bass, and the kind of sound you’d organise a party just to hear.
+            </p>
+            <p>
+              We are indeed getting a bit carried away. But we’re building something we want to enjoy together for the next 15 years or so. Might as well do it properly.
             </p>
             <p className="text-white/80 text-sm sm:text-base">
-              Horner Audio are helping with the engineering and giving us time and workshop space to make it happen.
+              Horner Audio are helping us get there with their engineering knowledge, time and workshop space.
             </p>
           </div>
         </div>
