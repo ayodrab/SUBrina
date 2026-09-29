@@ -29,19 +29,77 @@ export const SupportersWall: React.FC<SupportersWallProps> = ({ donors }) => {
           </p>
         </div>
 
+        {/* Backer Word Cloud */}
+        <div className="mb-10 p-6 sm:p-8 rounded-[2rem] bg-[#19092b] border-2 border-white/15 shadow-[6px_6px_0_#ec4899] text-center overflow-hidden relative">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 py-2">
+            {/* Julia P - First Backer */}
+            <span
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-xl sm:text-3xl font-black bg-[#FFB400] text-[#1e0538] border-3 border-[#1e0538] shadow-[4px_4px_0_#f43f5e] -rotate-2 hover:rotate-0 hover:scale-105 transition-all cursor-default select-none"
+              style={{ fontFamily: 'var(--display)' }}
+            >
+              <span>💖</span>
+              <span>Julia P</span>
+              <span className="text-xs sm:text-sm font-mono font-bold bg-[#1e0538] text-white px-2.5 py-0.5 rounded-full">
+                €1,250
+              </span>
+            </span>
+
+            {/* Jana W */}
+            <span
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-lg sm:text-2xl font-black bg-[#f43f5e] text-white border-2 border-[#1e0538] shadow-[3px_3px_0_#FFB400] rotate-2 hover:rotate-0 hover:scale-105 transition-all cursor-default select-none"
+              style={{ fontFamily: 'var(--display)' }}
+            >
+              <span>✨</span>
+              <span>Jana W</span>
+            </span>
+
+            {/* Carlos V */}
+            <span
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-lg sm:text-2xl font-black bg-[#38bdf8] text-[#1e0538] border-2 border-[#1e0538] shadow-[3px_3px_0_#1e0538] -rotate-1 hover:rotate-0 hover:scale-105 transition-all cursor-default select-none"
+              style={{ fontFamily: 'var(--display)' }}
+            >
+              <span>🔊</span>
+              <span>Carlos V</span>
+            </span>
+
+            {/* Valentin S */}
+            <span
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-lg sm:text-2xl font-black bg-[#a855f7] text-white border-2 border-[#1e0538] shadow-[3px_3px_0_#FFB400] rotate-3 hover:rotate-0 hover:scale-105 transition-all cursor-default select-none"
+              style={{ fontFamily: 'var(--display)' }}
+            >
+              <span>🪩</span>
+              <span>Valentin S</span>
+            </span>
+
+            {/* Join the Cloud CTA */}
+            <a
+              href={PAYPAL_POOL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider text-white/80 hover:text-white bg-[#25123d] hover:bg-[#341753] border-2 border-dashed border-[#FFB400]/50 hover:border-[#FFB400] transition-all hover:scale-105 shadow-sm"
+            >
+              <span>+ Add your name? ↗</span>
+            </a>
+          </div>
+        </div>
+
         {/* Supporters Wall Cards */}
         <div className="space-y-4 mb-14">
-          {donors.map((donor) => (
+          {donors.map((donor, idx) => (
             <div
               key={donor.id}
-              className="p-6 sm:p-7 rounded-[1.8rem] bg-[#FFB400] text-[#1e0538] border-3 border-[#1e0538] shadow-[8px_8px_0_#f43f5e] text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className={`p-6 sm:p-7 rounded-[1.8rem] border-3 border-[#1e0538] text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all ${
+                idx % 2 === 0
+                  ? 'bg-[#FFB400] text-[#1e0538] shadow-[8px_8px_0_#f43f5e]'
+                  : 'bg-[#fdf4ff] text-[#1e0538] shadow-[8px_8px_0_#38bdf8]'
+              }`}
             >
               <div className="flex items-center gap-4">
                 <div className="w-13 h-13 rounded-2xl bg-[#1e0538] text-[#FFB400] grid place-items-center text-2xl shrink-0 shadow-[2px_2px_0_#f43f5e]">
                   {donor.monsterAvatar || '💖'}
                 </div>
                 <div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xl sm:text-2xl font-black uppercase tracking-tight" style={{ fontFamily: 'var(--display)' }}>
                       {donor.name}
                     </span>

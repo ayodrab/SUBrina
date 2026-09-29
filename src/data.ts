@@ -4,7 +4,7 @@ export const PAYPAL_POOL_URL = 'https://www.paypal.com/pool/9sXuCfXhbW?sr=ancr';
 export const TELEGRAM_AYO_URL = 'https://t.me/ayodrab';
 
 export const INITIAL_FUNDRAISING_GOAL = 11385;
-export const CURRENT_TOTAL_RAISED = 1250;
+export const CURRENT_TOTAL_RAISED = 1345;
 
 // Optional manually maintained date when the total was verified.
 // Set to null to omit. When provided, shown gently alongside the progress.
@@ -130,7 +130,7 @@ export const INITIAL_BUDGET_ITEMS: BudgetItem[] = [
     category: 'The Tops (Step 1)',
     title: '2 × SAWMOD Multiple Entry Horns',
     cost: 2090,
-    funded: 1250,
+    funded: 1345,
     description: 'Designed by JW Audio with build support from Horner Audio. Five speaker drivers inside each cabinet, all firing out of the exact same horn.',
     icon: 'Megaphone',
     specs: '5 drivers per horn • JW Audio design • Point-source wavefront'
